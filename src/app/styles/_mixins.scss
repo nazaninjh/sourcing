@@ -5,9 +5,12 @@
   background-color: $bg;
   color: $color;
   padding: 0.5rem 1rem;
-  border-radius: fn.px_to_rem(8);
+  border: none;
+  border-radius: fn.px_to_rem(4);
+  outline: none;
 
-  width: auto;
+  width: 100%;
 
   text-align: center;
+  font-family: inherit;
 }
