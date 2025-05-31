@@ -1,3 +1,5 @@
+import clsx from "clsx";
+import styles from "./page.module.scss";
 export default function Home() {
-  return <p>Home</p>;
+  return <p className={clsx(styles.home, "wrapper", "global-btn")}>Home</p>;
 }

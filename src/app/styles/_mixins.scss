@@ -1,0 +1,13 @@
+@use "./functions" as fn;
+@use "./variables" as vars;
+
+@mixin GlobalBtn($bg: vars.$color-primary, $color: vars.$text-light) {
+  background-color: $bg;
+  color: $color;
+  padding: 0.5rem 1rem;
+  border-radius: fn.px_to_rem(8);
+
+  width: auto;
+
+  text-align: center;
+}
