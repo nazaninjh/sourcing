@@ -1,0 +1,5 @@
+@use "./variables" as vars;
+
+:export {
+  fz-heading-lg: vars.$fz-heading-lg;
+}
