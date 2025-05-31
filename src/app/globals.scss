@@ -6,6 +6,30 @@
   font-family: var(--font-fa), "sans-serif";
 }
 
+* {
+  font-family: inherit;
+}
+
+input,
+label,
+select,
+textarea,
+button,
+fieldset,
+legend,
+datalist,
+output,
+option,
+optgroup {
+  font-family: inherit;
+}
+
+ul {
+  li {
+    list-style: none;
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -19,10 +43,6 @@ body {
   max-width: 100%;
   padding-inline: 1rem;
   padding-block: 0px;
-}
-
-.global-btn {
-  @include mixin.GlobalBtn;
 }
 
 @media (min-width: 640px) and (max-width: 1440px) {
