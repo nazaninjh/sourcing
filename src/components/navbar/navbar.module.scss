@@ -1,5 +1,6 @@
 @use "./../../app//styles/mixins" as mixin;
 @use "./../../app//styles/placeholders";
+@use "./../../app/styles/variables" as vars;
 .nav {
   display: none;
 }
@@ -11,12 +12,17 @@
   align-items: center;
   justify-content: space-between;
 
+  padding-block: 1rem;
+
   .menuBtn {
     z-index: 10;
+    outline: none;
+    border: none;
+    background-color: transparent;
   }
 
   .overlay {
-    @extend %overlay;
+    @extend %backdrop;
     opacity: 0;
     z-index: 0;
 
@@ -37,6 +43,7 @@
     grid-template-areas: "logo list btns";
     grid-template-columns: auto 1fr auto;
     align-items: center;
+    background-color: transparent;
     .logo {
       grid-area: logo;
       text-align: center;
@@ -46,6 +53,7 @@
       grid-area: list;
       display: flex;
       gap: 0.2rem;
+      color: vars.$text-light;
     }
     .btn-container {
       grid-area: btns;

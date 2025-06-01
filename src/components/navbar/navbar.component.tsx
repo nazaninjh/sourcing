@@ -2,8 +2,7 @@ import LogoComponent from "../shared/logo-beigi/logo.component";
 import vars from "@/app/styles/variables.module.scss";
 import styles from "./navbar.module.scss";
 import clsx from "clsx";
-import { UserIcon } from "./assets/icons/user.icon";
-import { HamburgerIcon } from "./assets/icons/hamburger.icon";
+
 import NavbarMobileComponent from "./navbarMobile.component";
 export default function NavbarComponent() {
   return (
@@ -12,9 +11,9 @@ export default function NavbarComponent() {
         <div className={styles.logo}>
           <LogoComponent
             styles={{
-              color: "black",
+              color: vars["text-light"],
               fontFamily: "var(--rozha-fa)",
-              fontSize: vars["fz-heading-md"],
+              fontSize: vars["fz-heading-lg"],
             }}
           />
         </div>

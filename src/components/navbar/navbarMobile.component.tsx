@@ -64,14 +64,14 @@ export default function NavbarMobileComponent() {
         // }}
         aria-label="Toggle menu"
       >
-        <HamburgerIcon color="black" />
+        <HamburgerIcon color="white" />
       </button>
 
       <LogoComponent
         styles={{
-          color: "black",
+          color: vars["text-light"],
           fontFamily: "var(--rozha-fa)",
-          fontSize: vars.fzHeadingSm,
+          fontSize: vars["fz-heading-sm"],
           textAlign: "center",
         }}
       />

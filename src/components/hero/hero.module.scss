@@ -1,0 +1,132 @@
+@use "./../../app//styles/placeholders";
+@use "./../../app//styles/variables" as vars;
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "stack";
+  width: 100%;
+
+  position: relative; // for z-index stacking context
+  .overlay {
+    grid-area: stack;
+    z-index: 2;
+    @extend %overlay;
+  }
+  .mobile-img {
+    grid-area: stack;
+    display: inline;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+  .img {
+    display: none;
+  }
+  .nav {
+    grid-area: stack;
+    z-index: 3;
+  }
+
+  .texts {
+    display: none;
+  }
+  .mobile-texts {
+    grid-area: stack;
+    align-self: end;
+
+    display: grid;
+    row-gap: 0.5rem;
+    color: vars.$text-light;
+
+    text-align: center;
+
+    z-index: 3;
+
+    margin-block-end: 1rem;
+
+    > * {
+      margin: 0;
+    }
+
+    > h1 {
+      font-size: vars.$fz-m-lg;
+    }
+
+    > h4 {
+      font-size: vars.$fz-m-md;
+    }
+  }
+}
+
+@media (min-width: 640px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "stack";
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    position: relative; // for z-index stacking context
+    .mobile-img {
+      display: none;
+    }
+    .img {
+      grid-area: stack;
+      display: inline;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    .nav {
+      grid-area: stack;
+      z-index: 3;
+    }
+
+    .mobile-texts {
+      display: none;
+    }
+
+    .texts {
+      grid-area: stack;
+      align-self: center;
+      justify-self: start;
+      display: grid;
+      row-gap: 1rem;
+      color: vars.$text-light;
+
+      width: auto;
+      max-width: vars.$max-page-width;
+      padding-inline: 2rem;
+      padding-block: 0px;
+
+      z-index: 3;
+
+      > * {
+        margin: 0;
+      }
+
+      > h5 {
+        max-width: 80ch;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .wrapper {
+    .texts {
+      display: grid;
+      width: 100%;
+      padding-inline: 0rem;
+      padding-block: 0px;
+      margin: 0 auto;
+    }
+  }
+}
