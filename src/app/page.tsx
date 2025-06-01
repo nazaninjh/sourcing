@@ -1,5 +1,10 @@
-import clsx from "clsx";
 import styles from "./page.module.scss";
+
+import NavbarComponent from "@/components/navbar/navbar.component";
 export default function Home() {
-  return <p className={clsx(styles.home, "wrapper", "global-btn")}>Home</p>;
+  return (
+    <main className={styles.home}>
+      <NavbarComponent />
+    </main>
+  );
 }
