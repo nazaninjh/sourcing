@@ -1,0 +1,35 @@
+{
+  "mail": {
+    "title": "پست الکترونیک: ",
+    "address": "Office@Beigigroup.com"
+  },
+  "address": {
+    "title": "نشانی: ",
+    "address": "تهران - شهرک غرب - بلوار فرحزادی- برج لیدوما - طبقه 7 - واحد2"
+  },
+  "phone": {
+    "title": "تلفن پشتیبانی: ",
+    "address": "+98912 349 2800"
+  },
+  "linkedin": {
+    "title": "لینکدین",
+    "icon": "/icons/linkedin.webp",
+    "linkAdress": "https://www.linkedin.com/company/beigigroup"
+  },
+  "insta": {
+    "title": "اینستاگرام",
+    "icon": "/icons/instagram.webp"
+  },
+  "facebook": {
+    "title": "فیسبوک",
+    "icon": "/icons/facebook.webp"
+  },
+  "twitter": {
+    "title": "توییتر",
+    "icon": "/icons/twitter.webp"
+  },
+  "availbale": "۷ روز هفته، ۲۴ ساعته پاسخگوی شما هستیم",
+  "media": "شبکه های اجتماعی",
+  "goUp": "رفتن به بالا",
+  "copyRight": "تمامی حقوق مادی و معنوی این سایت متعلق به نام برند می‌ باشد."
+}

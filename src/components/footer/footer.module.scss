@@ -1,0 +1,82 @@
+@use "./../../app//styles/placeholders.scss" as *;
+@use "./../../app//styles/mixins" as mixin;
+@use "./../../app//styles/variables" as vars;
+.container {
+  display: grid;
+  font-size: vars.$fz-m-sm;
+  width: 100%;
+  max-width: 100%;
+
+  @include mixin.mq(sm) {
+    font-size: vars.$fz-sm;
+  }
+  .uls {
+    display: grid;
+    row-gap: 0.5rem;
+    @include mixin.mq(sm) {
+      display: grid;
+      grid-template-columns: 1fr auto auto 1fr;
+      align-items: center;
+      justify-content: space-between;
+      column-gap: 1rem;
+    }
+
+    > ul {
+      padding: 0;
+      display: grid;
+      row-gap: 0.5rem;
+      @include mixin.mq(2xl) {
+        > ul {
+          padding: auto;
+        }
+      }
+      > li {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.5rem;
+      }
+    }
+  }
+  .divider {
+    @extend %divider;
+  }
+  .bottom-img {
+    @include mixin.mq(sm) {
+      justify-self: end;
+    }
+  }
+
+  .sub-footer {
+    display: grid;
+    grid-template-columns: auto 1fr;
+
+    > p {
+      justify-self: center;
+      text-align: center;
+    }
+
+    .btn {
+      display: none;
+      @include mixin.mq(sm) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        outline: none;
+        border: none;
+        background-color: transparent;
+      }
+
+      cursor: pointer;
+      > span {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}
+
+.heading {
+  font-size: vars.$fz-md;
+}

@@ -1,0 +1,70 @@
+@use "./variables" as vars;
+@use "./mixins" as mixin;
+@use "sass:color";
+%ham-sidebar {
+  position: absolute;
+  inset-block: 0;
+  inset-inline: 0;
+
+  max-width: 250px;
+  min-height: 100vh;
+  background-color: green;
+
+  z-index: -1;
+  transition:
+    transform 1000ms ease-in,
+    opacity 500ms linear;
+  &.show {
+    opacity: 1;
+    transform: translateX(0%);
+    z-index: 999;
+  }
+  &.close {
+    opacity: 0;
+    transform: translateX(100%);
+    z-index: -1;
+  }
+}
+
+%backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(17, 17, 17, 0.2);
+  z-index: -1;
+  opacity: 0;
+
+  &.show {
+    opacity: 1;
+    z-index: 998;
+    pointer-events: auto;
+  }
+  &.close {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+%overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+%divider {
+  width: 100%;
+  height: 2px;
+  background-color: color.adjust(vars.$border-gray, $lightness: +20%);
+}
+
+%center-in-wrapper {
+  margin-inline: 1rem;
+  @include mixin.mq(sm) {
+    margin-inline: 2rem;
+  }
+  @include mixin.mq(2xl) {
+    width: auto;
+    margin-inline-start: calc((100% - 1440px) / 2);
+    padding-inline: 0px;
+    padding-block: 0px;
+  }
+}

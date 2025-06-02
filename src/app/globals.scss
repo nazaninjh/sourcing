@@ -1,0 +1,69 @@
+@use "./styles/variables" as vars;
+@use "./styles//functions" as fns;
+@use "./styles/mixins" as mixin;
+
+:root {
+  font-family: var(--font-fa), "sans-serif";
+}
+
+* {
+  font-family: inherit;
+}
+
+input,
+label,
+select,
+textarea,
+button,
+fieldset,
+legend,
+datalist,
+output,
+option,
+optgroup {
+  font-family: inherit;
+}
+
+ul {
+  li {
+    list-style: none;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: vars.$text-dark;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: vars.$color-bg;
+  font-size: vars.$fz-m-md;
+
+  max-width: 100%;
+}
+.wrapper {
+  max-width: 100%;
+  padding-inline: 1rem;
+  padding-block: 0px;
+}
+
+@media (min-width: 640px) and (max-width: 1440px) {
+  .wrapper {
+    max-width: vars.$max-page-width;
+    margin: 0 auto;
+    padding-inline: 2rem;
+    padding-block: 0px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .wrapper {
+    max-width: vars.$max-page-width;
+    margin: 0 auto;
+    padding-inline: 0px;
+    padding-block: 0px;
+  }
+}

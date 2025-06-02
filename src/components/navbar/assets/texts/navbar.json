@@ -1,0 +1,13 @@
+{
+  "options": {
+    "home": "صفحه اصلی",
+    "designers": "طراحان",
+    "applicant": "متقاضیان طراحی",
+    "gallary": "گالری",
+    "news": "خبرنامه"
+  },
+  "signup": {
+    "enter": "ورود",
+    "signup": "ثبت نام"
+  }
+}
