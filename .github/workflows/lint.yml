@@ -9,9 +9,8 @@ on:
 jobs:
   lint:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v4.2.1
+      - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
         with:
@@ -19,7 +18,7 @@ jobs:
           cache: "pnpm"
 
       - name: Install pnpm
-        run: npm install -g pnpm
+        run: corepack enable && corepack prepare pnpm@latest --activate
 
       - name: Install Dependencies
         run: pnpm install
