@@ -1,16 +1,29 @@
 @use "./functions" as fn;
 @use "./variables" as vars;
+@use "./breakpoints" as br;
+
+@use "sass:map";
 
 @mixin GlobalBtn($bg: vars.$color-primary, $color: vars.$text-light) {
   background-color: $bg;
   color: $color;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.7rem;
   border: none;
-  border-radius: fn.px_to_rem(4);
+  border-radius: fn.px_to_rem(8);
   outline: none;
 
-  width: 100%;
+  width: auto;
 
   text-align: center;
   font-family: inherit;
+}
+
+@mixin mq($key) {
+  $size: map-get(
+    $map: br.$breakpoints,
+    $key: $key,
+  );
+  @media (min-width: $size) {
+    @content;
+  }
 }
