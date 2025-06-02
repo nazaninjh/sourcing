@@ -1,5 +1,14 @@
 import { CSSProperties } from "react";
-
-export default function LogoComponent({ styles }: { styles: CSSProperties }) {
-  return <div style={styles}>BEIGI</div>;
+import styles from "./logo.module.scss";
+export default function LogoComponent({
+  customStyles,
+}: {
+  customStyles: CSSProperties;
+}) {
+  // todo: add font size in here
+  return (
+    <div className={styles.logo} style={customStyles}>
+      BEIGI
+    </div>
+  );
 }

@@ -20,10 +20,8 @@ export default function FooterComponent() {
           <ul>
             <li>
               <LogoComponent
-                styles={{
+                customStyles={{
                   color: vars["text-dark"],
-                  fontFamily: "var(--rozha-fa)",
-                  fontSize: vars["fz-heading-lg"],
                 }}
               />
             </li>

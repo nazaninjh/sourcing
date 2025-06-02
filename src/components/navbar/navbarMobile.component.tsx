@@ -68,10 +68,8 @@ export default function NavbarMobileComponent() {
       </button>
 
       <LogoComponent
-        styles={{
+        customStyles={{
           color: vars["text-light"],
-          fontFamily: "var(--rozha-fa)",
-          fontSize: vars["fz-heading-sm"],
           textAlign: "center",
         }}
       />

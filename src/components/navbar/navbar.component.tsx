@@ -15,10 +15,8 @@ export default function NavbarComponent() {
       <nav className={clsx(styles.nav)}>
         <div className={styles.logo}>
           <LogoComponent
-            styles={{
+            customStyles={{
               color: vars["text-light"],
-              fontFamily: "var(--rozha-fa)",
-              fontSize: vars["fz-heading-lg"],
             }}
           />
         </div>
