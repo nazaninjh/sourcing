@@ -8,7 +8,7 @@ export default function IntroComponent() {
       <div className={styles.container}>
         {texts.map((text) => {
           return (
-            <div className={styles.card}>
+            <div className={styles.card} key={text.img}>
               <Image src={imageMap[text.img]} alt="" width={100} height={100} />
               <span> {text.title}</span>
             </div>

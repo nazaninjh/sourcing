@@ -79,7 +79,7 @@ export default function NavbarMobileComponent() {
       <div
         className={clsx(
           styles.overlay,
-          openSidebar ? styles.show : styles.close
+          openSidebar ? styles.show : styles.close,
         )}
         onClick={handleClose}
       >
@@ -87,7 +87,7 @@ export default function NavbarMobileComponent() {
           ref={sidebarRef}
           className={clsx(
             styles.sidebar,
-            openSidebar ? styles.show : styles.close
+            openSidebar ? styles.show : styles.close,
           )}
         >
           <ul>

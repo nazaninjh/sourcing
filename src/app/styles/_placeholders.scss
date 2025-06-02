@@ -11,7 +11,9 @@
   background-color: green;
 
   z-index: -1;
-  transition: transform 1000ms ease-in, opacity 500ms linear;
+  transition:
+    transform 1000ms ease-in,
+    opacity 500ms linear;
   &.show {
     opacity: 1;
     transform: translateX(0%);

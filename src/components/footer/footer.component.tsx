@@ -27,7 +27,7 @@ export default function FooterComponent() {
             </li>
             {content.beigi.items.map((item) => {
               return (
-                <li>
+                <li key={item.linkAddress || item.addres}>
                   <span> {item.icon}</span>
                   <span>{item.title}</span>
                   <Link href={item.linkAddress ? item.linkAddress : "#"}>
@@ -41,7 +41,7 @@ export default function FooterComponent() {
             <li className={styles.heading}>{content.media.heading}</li>
             {content.media.items.map((item) => {
               return (
-                <li>
+                <li key={item.addres}>
                   <Image src={item.icon} alt="" width={18} height={18} />
                   <span>{item.title}</span>
 
