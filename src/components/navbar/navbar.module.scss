@@ -3,6 +3,55 @@
 @use "./../../app/styles/variables" as vars;
 .nav {
   display: none;
+  @include mixin.mq(sm) {
+    display: grid;
+    grid-template-areas: "logo list btns";
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    background-color: transparent;
+    .logo {
+      grid-area: logo;
+      text-align: center;
+      align-items: center;
+    }
+    > ul {
+      grid-area: list;
+      display: flex;
+      gap: 0.5rem;
+      color: vars.$text-light;
+      font-size: vars.$fz-sm;
+    }
+    .btn-container {
+      grid-area: btns;
+      display: flex;
+      gap: 0.5rem;
+      .btn {
+        @include mixin.GlobalBtn;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.2rem;
+
+        > span {
+          display: flex;
+          align-items: center;
+          font-size: vars.$fz-sm;
+        }
+      }
+    }
+  }
+
+  @include mixin.mq(xl) {
+    > ul {
+      font-size: vars.$fz-md;
+      gap: 1rem;
+    }
+    .btn-container {
+      .btn {
+        gap: 0.5rem;
+      }
+    }
+  }
 }
 
 .mobile-nav {
@@ -13,6 +62,10 @@
   justify-content: space-between;
 
   padding-block: 1rem;
+
+  @include mixin.mq(sm) {
+    display: none;
+  }
 
   .menuBtn {
     z-index: 10;
@@ -30,38 +83,6 @@
     min-height: 100vh;
     .sidebar {
       @extend %ham-sidebar;
-    }
-  }
-}
-
-@media (min-width: 640px) {
-  .mobile-nav {
-    display: none;
-  }
-  .nav {
-    display: grid;
-    grid-template-areas: "logo list btns";
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-    background-color: transparent;
-    .logo {
-      grid-area: logo;
-      text-align: center;
-      align-items: center;
-    }
-    > ul {
-      grid-area: list;
-      display: flex;
-      gap: 0.2rem;
-      color: vars.$text-light;
-    }
-    .btn-container {
-      grid-area: btns;
-      display: flex;
-      gap: 0.5rem;
-      .btn {
-        @include mixin.GlobalBtn;
-      }
     }
   }
 }
