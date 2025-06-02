@@ -3,6 +3,8 @@ import NavbarComponent from "../navbar/navbar.component";
 import homeImg from "@/assets/images/home.webp";
 import homeMobileImg from "@/assets/images/home-mobile.webp";
 
+import text from "./assets/texts/hero.json";
+
 import styles from "./hero.module.scss";
 import clsx from "clsx";
 
@@ -28,16 +30,17 @@ export default function HeroComponent() {
         <NavbarComponent />
       </div>
       <div className={clsx(styles.texts)}>
-        <h1>گـروه صنعتـی بـیـــگـــــــی</h1>
-        <h4>اولین استارت آپ جمع سپاری و مسابقات معماری ایران</h4>
-        <h5>
-          در صنعت ساختمان فعالیت می‌کنید؟ فرقی ندارد سازنده باشید یا معمار، گروه
-          بیگی برای شما بهترین و خوشایندترین تجربه همکاری را رقم خواهد.
-        </h5>
+        <h1>{text.texts.title}</h1>
+        <h4>{text.texts.subTitle}</h4>
+        <h5>{text.texts.content}</h5>
+        <div className={styles.btns}>
+          <button type="button">{text.btns.archive}</button>
+          <button type="button">{text.btns.competitions}</button>
+        </div>
       </div>
       <div className={clsx(styles["mobile-texts"])}>
-        <h1>گـروه صنعتـی بـیـــگـــــــی</h1>
-        <h4>اولین استارت آپ جمع سپاری و مسابقات معماری ایران</h4>
+        <h1>{text.texts.title}</h1>
+        <h4>{text.texts.subTitle}</h4>
       </div>
     </div>
   );

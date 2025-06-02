@@ -4,11 +4,16 @@
 
 @use "sass:map";
 
-@mixin GlobalBtn($bg: vars.$color-primary, $color: vars.$text-light) {
+@mixin GlobalBtn(
+  $bg: vars.$color-primary,
+  $color: vars.$text-light,
+  $border: none,
+  $padding: 0.7rem
+) {
   background-color: $bg;
   color: $color;
-  padding: 0.5rem 0.7rem;
-  border: none;
+  padding: $padding;
+  border: $border;
   border-radius: fn.px_to_rem(8);
   outline: none;
 

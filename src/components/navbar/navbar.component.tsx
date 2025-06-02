@@ -1,7 +1,7 @@
 import LogoComponent from "../shared/logo-beigi/logo.component";
 import vars from "@/app/styles/variables.module.scss";
 
-import translate from "./assets/texts/navbar.json";
+import text from "./assets/texts/navbar.json";
 
 import clsx from "clsx";
 import styles from "./navbar.module.scss";
@@ -23,11 +23,11 @@ export default function NavbarComponent() {
           />
         </div>
         <ul>
-          <li>{translate.options.home}</li>
-          <li>{translate.options.designers}</li>
-          <li>{translate.options.applicant}</li>
-          <li>{translate.options.gallary}</li>
-          <li>{translate.options.news}</li>
+          <li>{text.options.home}</li>
+          <li>{text.options.designers}</li>
+          <li>{text.options.applicant}</li>
+          <li>{text.options.gallary}</li>
+          <li>{text.options.news}</li>
         </ul>
 
         <div className={styles["btn-container"]}>
@@ -39,7 +39,7 @@ export default function NavbarComponent() {
               <ExitIcon width={16} height={14} />
             </span>
             <span>
-              {translate.signup.enter} | {translate.signup.signup}
+              {text.signup.enter} | {text.signup.signup}
             </span>
           </button>
         </div>
