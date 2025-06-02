@@ -1,0 +1,70 @@
+@use "./../../app/styles/variables" as vars;
+@use "./../../app/styles/mixins" as mixin;
+@use "./../../app/styles/functions" as fns;
+.container {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-block: vars.$component-margin;
+
+  @include mixin.mq(sm) {
+    align-items: center;
+  }
+  @include mixin.mq(lg) {
+    display: grid;
+    grid-template-areas: "texts img";
+    grid-template-columns: 1fr 1fr;
+    column-gap: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .texts {
+    grid-area: texts;
+    .title {
+      display: none;
+      @include mixin.mq(lg) {
+        display: inline;
+      }
+    }
+    .categories {
+      &.active {
+        color: vars.$color-secondary;
+        text-decoration: underline;
+        text-underline-offset: 0.5rem;
+        text-decoration-style: dashed;
+        text-decoration-color: vars.$color-secondary;
+      }
+    }
+    .content {
+      color: vars.$text-gray;
+      font-size: vars.$fz-sm;
+    }
+  }
+
+  > img {
+    grid-area: img;
+    max-width: 100%;
+    width: fns.px_to_rem(610);
+    height: fns.px_to_rem(382);
+    @include mixin.mq(sm) {
+      justify-self: end;
+      width: auto;
+      height: auto;
+    }
+    @include mixin.mq(xl) {
+      justify-self: end;
+      width: fns.px_to_rem(610);
+      height: fns.px_to_rem(382);
+    }
+  }
+  .mobile-title {
+    color: vars.$color-primary;
+    font-weight: 800;
+
+    @include mixin.mq(lg) {
+      display: none;
+    }
+  }
+}
