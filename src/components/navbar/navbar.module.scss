@@ -75,12 +75,14 @@
   }
 
   .overlay {
-    @extend %backdrop;
     opacity: 0;
     z-index: 0;
-
-    min-width: 100vw;
-    min-height: 100vh;
+    height: auto;
+    width: auto;
+    @include mixin.mq(sm) {
+      min-width: 100vw;
+      min-height: 100vh;
+    }
     .sidebar {
       @extend %ham-sidebar;
     }

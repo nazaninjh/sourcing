@@ -1,0 +1,47 @@
+@use "./../../app/styles/variables" as vars;
+
+@use "./../../app/styles/mixins" as mixin;
+@use "./../../app/styles/functions" as fns;
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+
+  margin-block: vars.$component-margin;
+
+  .card {
+    display: grid;
+    row-gap: 0.8rem;
+    justify-items: center;
+    align-items: center;
+    font-size: vars.$fz-m-sm;
+    @include mixin.mq(sm) {
+      font-size: vars.$fz-sm;
+      font-weight: 100;
+    }
+
+    > img {
+      width: fns.px_to_rem(50);
+      height: fns.px_to_rem(50);
+
+      @include mixin.mq(lg) {
+        width: auto;
+        height: auto;
+      }
+    }
+
+    > span {
+      max-width: 20ch;
+      text-align: center;
+    }
+  }
+  .card:first-child,
+  .card:last-child,
+  .card:nth-child(5) {
+    display: none;
+    @include mixin.mq(sm) {
+      display: grid;
+    }
+  }
+}
