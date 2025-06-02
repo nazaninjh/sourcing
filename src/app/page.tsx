@@ -1,10 +1,12 @@
 import HeroComponent from "@/components/hero/hero.component";
 import styles from "./page.module.scss";
+import FooterComponent from "@/components/footer/footer.component";
 
 export default function Home() {
   return (
-    <main className={styles.home}>
+    <main>
       <HeroComponent />
+      <FooterComponent />
     </main>
   );
 }

@@ -1,4 +1,6 @@
 @use "./variables" as vars;
+@use "./mixins" as mixin;
+@use "sass:color";
 %ham-sidebar {
   position: absolute;
   inset-block: 0;
@@ -44,4 +46,23 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
+}
+
+%divider {
+  width: 100%;
+  height: 2px;
+  background-color: color.adjust(vars.$border-gray, $lightness: +20%);
+}
+
+%center-in-wrapper {
+  margin-inline: 1rem;
+  @include mixin.mq(sm) {
+    margin-inline: 2rem;
+  }
+  @include mixin.mq(2xl) {
+    width: auto;
+    margin-inline-start: calc((100% - 1440px) / 2);
+    padding-inline: 0px;
+    padding-block: 0px;
+  }
 }

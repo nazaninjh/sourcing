@@ -8,7 +8,6 @@
   grid-template-rows: 1fr;
   grid-template-areas: "stack";
   width: 100%;
-
   position: relative; // for z-index stacking context
 
   .overlay {
@@ -57,6 +56,7 @@
 
   .texts {
     display: none;
+    @extend %center-in-wrapper;
     @include mixin.mq(sm) {
       grid-area: stack;
       align-self: center;
@@ -67,8 +67,6 @@
       color: vars.$text-light;
 
       width: fit-content;
-      margin-inline: 2rem;
-
       z-index: 3;
 
       > * {
@@ -96,14 +94,6 @@
           @include mixin.GlobalBtn($border: vars.$color-primary solid 1px);
         }
       }
-    }
-
-    @include mixin.mq(2xl) {
-      width: auto;
-      margin-inline-start: calc((100% - 1440px) / 2);
-
-      padding-inline: 0px;
-      padding-block: 0px;
     }
   }
   .mobile-texts {
