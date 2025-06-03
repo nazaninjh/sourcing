@@ -132,18 +132,17 @@ const CarouselComponent = ({
   };
 
   return (
-    <div
-      className={styles.carouselWrapper}
-      style={{ maxWidth: !isMobile ? `${maxWrapperWidth.current}px` : "100%" }}
-    >
-      <button
-        type="button"
-        onClick={prev}
-        disabled={currentIndex === 0}
-        className={styles.navBtn}
-      >
-        {customArrows ? customArrows[0] : "▶"}
-      </button>
+    <div className={styles.carouselWrapper}>
+      {!isMobile && (
+        <button
+          type="button"
+          onClick={prev}
+          disabled={currentIndex === 0}
+          className={styles.navBtn}
+        >
+          {customArrows ? customArrows[0] : "▶"}
+        </button>
+      )}
 
       <div
         className={styles.carousel}
@@ -164,14 +163,16 @@ const CarouselComponent = ({
         </div>
       </div>
 
-      <button
-        type="button"
-        onClick={next}
-        disabled={currentIndex === total - 1}
-        className={styles.navBtn}
-      >
-        {customArrows ? customArrows[1] : "◀"}
-      </button>
+      {!isMobile && (
+        <button
+          type="button"
+          onClick={next}
+          disabled={currentIndex === total - 1}
+          className={styles.navBtn}
+        >
+          {customArrows ? customArrows[1] : "◀"}
+        </button>
+      )}
 
       {showBullets && (
         <div className={styles.bullets}>
