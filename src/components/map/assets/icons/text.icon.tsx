@@ -4,7 +4,7 @@ export default function TextIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="59"
+      width="50"
       height="9"
       viewBox="0 0 59 9"
       fill="none"

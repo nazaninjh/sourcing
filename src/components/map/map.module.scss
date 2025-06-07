@@ -13,8 +13,11 @@
   @include mixin.mq(sm) {
     flex-direction: row-reverse;
     align-items: center;
-    column-gap: vars.$flex-col-gap;
+    column-gap: 0.5rem;
     flex: 1;
+  }
+  @include mixin.mq(lg) {
+    column-gap: vars.$flex-col-gap;
   }
 
   :global {
@@ -29,23 +32,25 @@
 
   .texts {
     flex: 1;
+
     .title {
       display: flex;
-      gap: 0.3rem;
       width: 100%;
-      font-size: vars.$fz-m-md;
+      font-size: vars.$fz-m-xs;
       font-weight: 600;
 
       @include mixin.mq(sm) {
-        font-size: vars.$fz-md;
+        font-size: vars.$fz-sm;
       }
       .continent {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: 0;
+
         text-align: center;
         color: vars.$color-primary;
+
+        font-size: vars.$fz-m-xs;
         &.africa {
           color: vars.$color-secondary;
         }
@@ -54,6 +59,7 @@
           color: vars.$color-secondary;
           opacity: 0;
           visibility: hidden;
+
           height: 0;
           transform: translateY(-0.5rem);
 
@@ -69,9 +75,11 @@
           }
           &.east {
             color: vars.$color-primary;
+            font-size: vars.$fz-m-sm;
           }
           &.africa {
             color: vars.$color-secondary;
+            font-size: vars.$fz-m-sm;
           }
         }
       }

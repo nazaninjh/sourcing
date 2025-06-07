@@ -79,7 +79,7 @@ export default function MapComponent() {
               >
                 {texts.title["middle-east"]}
               </span>
-              <span>
+              <span className={styles["text-icon"]}>
                 <TextIcon />
               </span>
             </div>
