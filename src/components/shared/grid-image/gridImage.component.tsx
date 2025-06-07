@@ -1,8 +1,7 @@
-import Image, { StaticImageData } from "next/image";
 import styles from "./gridImage.module.scss";
 import { ReactNode } from "react";
 type IProps = {
-  imgSrc: StaticImageData;
+  img: ReactNode;
   hasOverlay: boolean;
   topChildren?: {
     direction: "end" | "start" | "center";
@@ -23,7 +22,8 @@ type IProps = {
 export default function GridImageComponent({ props }: { props: IProps }) {
   return (
     <div className={styles.wrapper}>
-      <Image src={props.imgSrc} alt="عکس پروژه" width={387} height={255} />
+      {props.img}
+
       {props.hasOverlay && <div className={styles.overlay} />}
 
       <div

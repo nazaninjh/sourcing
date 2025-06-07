@@ -1,7 +1,9 @@
+import Image from "next/image";
 import styles from "./onGoingCard.module.scss";
 import { ReactNode } from "react";
 import GridImageComponent from "@/components/shared/grid-image/gridImage.component";
 import { StaticImageData } from "next/image";
+
 export default function OnGoingCardComponent({
   imgSrc,
   topStartTxts,
@@ -32,7 +34,7 @@ export default function OnGoingCardComponent({
       <GridImageComponent
         props={{
           hasOverlay: true,
-          imgSrc,
+          img: <Image src={imgSrc} alt="عکس پروژه" width={387} height={255} />,
           topChildren: {
             direction: "start",
             child: (
