@@ -1,13 +1,83 @@
 @use "./../../app/styles/mixins" as mixin;
+@use "./../../app/styles/variables" as vars;
 .container {
   display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
   justify-content: center;
   width: 100%;
   max-width: 100%;
 
+  margin-block: vars.$component-margin;
+
+  @include mixin.mq(sm) {
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+  }
+
+  :global {
+    .ant-carousel {
+      .slick-prev,
+      .slick-next {
+        color: rgba(117, 119, 128, 1);
+        z-index: 2;
+      }
+    }
+  }
+
+  .texts {
+    .title {
+      display: flex;
+      gap: 0.3rem;
+      width: 100%;
+      .continent {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0;
+        text-align: center;
+        color: vars.$color-primary;
+        &.africa {
+          color: vars.$color-secondary;
+        }
+
+        .text {
+          color: vars.$color-secondary;
+          opacity: 0;
+          visibility: hidden;
+          height: 0;
+          transform: translateY(-0.5rem);
+
+          transition:
+            opacity 400ms ease-out,
+            color 200ms ease-out,
+            transform 300ms ease-out;
+          &.active {
+            opacity: 1;
+            visibility: visible;
+            height: auto;
+            transform: translateY(0rem);
+          }
+          &.east {
+            color: vars.$color-primary;
+          }
+          &.africa {
+            color: vars.$color-secondary;
+          }
+        }
+      }
+    }
+
+    .content {
+      margin: 0;
+    }
+  }
   .item {
     width: 100%;
     max-width: 100%;
+
     @include mixin.mq(sm) {
       max-width: 50%;
     }
