@@ -36,9 +36,6 @@
     border-radius: vars.$normal-border-radius;
   }
   .texts-top-container {
-    grid-area: stack;
-    z-index: 2;
-
     display: flex;
     flex-direction: column;
 
@@ -79,10 +76,6 @@
     }
   }
   .texts-bottom-container {
-    grid-area: stack;
-    z-index: 2;
-    align-self: end;
-
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
     justify-items: center;
