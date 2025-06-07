@@ -1,6 +1,6 @@
 import { SVGProps } from "react";
 
-const ArrowIcon = ({ props }: { props?: SVGProps<SVGSVGElement> }) => {
+const NextArrowIcon = ({ props }: { props?: SVGProps<SVGSVGElement> }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -11,11 +11,11 @@ const ArrowIcon = ({ props }: { props?: SVGProps<SVGSVGElement> }) => {
       {...props}
     >
       <path
-        d="M11.885 1.77L10.115 0L0.11499 10L10.115 20L11.885 18.23L3.65499 10L11.885 1.77Z"
+        d="M0.115009 18.23L1.88501 20L11.885 10L1.88501 -8.74228e-07L0.115011 1.77L8.34501 10L0.115009 18.23Z"
         fill="black"
       />
     </svg>
   );
 };
 
-export { ArrowIcon };
+export { NextArrowIcon };
