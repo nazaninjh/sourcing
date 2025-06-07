@@ -68,3 +68,11 @@
     padding-block: 0px;
   }
 }
+
+%grid-stack {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "stack";
+  position: relative; // for z-index stacking context
+}

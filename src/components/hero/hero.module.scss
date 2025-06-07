@@ -7,8 +7,8 @@
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   grid-template-areas: "stack";
-  width: 100%;
   position: relative; // for z-index stacking context
+  width: 100%;
 
   .overlay {
     grid-area: stack;

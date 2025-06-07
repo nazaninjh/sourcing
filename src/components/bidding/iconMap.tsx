@@ -1,0 +1,11 @@
+import React, { ReactNode } from "react";
+import ParticipantIcon from "./assets/icons/participant.icon";
+import PriceIcon from "./assets/icons/price.icon";
+
+export const iconMap: {
+  participant: ReactNode;
+  price: ReactNode;
+} = {
+  participant: <ParticipantIcon width={16} height={16} />,
+  price: <PriceIcon width={16} height={16} />,
+};

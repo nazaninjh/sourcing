@@ -1,0 +1,48 @@
+{
+  "title": "لیست مناقصات",
+  "on-going": [
+    {
+      "name": "پروژه ایزد شهر",
+      "categoryName": "دسته بندی",
+      "category": "طراحی مسکونی",
+      "category-label": "دسته بندی",
+      "img": "project1",
+      "competitionCategory": "مسابقه عمومی",
+
+      "participant": {
+        "participantName": "تعداد شرکت کننده:",
+        "participantNum": "4",
+        "participantUnit": "نفر",
+        "icon": "participant"
+      },
+      "price": {
+        "priceName": "مبلغ جایزه:",
+        "priceNum": "300000",
+        "priceUnit": "ریال",
+        "icon": "price"
+      }
+    },
+    {
+      "name": "پروژه ایزد شهر",
+      "categoryName": "دسته بندی",
+      "category": "طراحی مسکونی",
+      "category-label": "دسته بندی",
+      "img": "project2",
+      "competitionCategory": "مسابقه عمومی",
+
+      "participant": {
+        "participantName": "تعداد شرکت کننده:",
+        "participantNum": "4",
+        "participantUnit": "نفر",
+        "icon": "participant"
+      },
+      "price": {
+        "priceName": "مبلغ جایزه:",
+        "priceNum": "300000",
+        "priceUnit": "ریال",
+        "icon": "price"
+      }
+    }
+  ],
+  "pending": []
+}

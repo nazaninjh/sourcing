@@ -17,6 +17,8 @@ $border-gray: rgba(116, 119, 127, 1);
 
 // padding and margin
 $component-margin: 4rem;
+$normal-padding: 0.5rem;
+$normal-border-radius: 0.5rem;
 
 // fonts
 
@@ -27,11 +29,13 @@ $fz-heading-md: clamp(2.8125rem, 2.4625rem + 0.875vw, 3.25rem);
 $fz-heading-sm: clamp(2.75rem, 3.15rem + -1vw, 2.25rem);
 
 // mobile
+$fz-m-xs: clamp(0.6rem, 0.5222rem + 0.4444vw, 0.7rem);
 $fz-m-sm: clamp(0.75rem, 0.5556rem + 1.1111vw, 1rem);
 $fz-m-md: clamp(0.875rem, 0.5833rem + 1.6667vw, 1.25rem);
 $fz-m-lg: clamp(1rem, 0.6111rem + 2.2222vw, 1.5rem);
 
 // desktop
+$fz-xs: clamp(0.6rem, 0.52rem + 0.2vw, 0.7rem);
 $fz-sm: clamp(0.75rem, 0.55rem + 0.5vw, 1rem);
 $fz-md: clamp(0.875rem, 0.575rem + 0.75vw, 1.25rem);
 $fz-lg: clamp(1rem, 0.6rem + 1vw, 1.5rem);

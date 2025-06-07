@@ -1,0 +1,119 @@
+@use "./../../../app/styles/placeholders";
+@use "./../../../app/styles/variables" as vars;
+@use "./../../../app/styles/mixins" as mixin;
+.wrapper {
+  @extend %grid-stack;
+  font-size: vars.$fz-m-sm;
+  @include mixin.mq(sm) {
+    font-size: vars.$fz-sm;
+  }
+  > img {
+    grid-area: stack;
+    z-index: 1;
+    width: 100%;
+    max-width: 100%;
+
+    object-fit: cover;
+
+    border-radius: vars.$normal-border-radius;
+
+    @include mixin.mq(sm) {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .overlay {
+    @extend %overlay;
+    position: absolute;
+    inset: 0;
+
+    z-index: 2;
+
+    width: 100%;
+    max-width: 100%;
+
+    border-radius: vars.$normal-border-radius;
+  }
+  .texts-top-container {
+    grid-area: stack;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+
+    row-gap: 0;
+    padding: vars.$normal-padding;
+  }
+  .name-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .name {
+      margin: 0;
+    }
+
+    .divider {
+      height: 1rem;
+      width: 2px;
+      background-color: black;
+    }
+    .comp {
+      background-color: vars.$color-red;
+      color: vars.$text-light;
+      padding: 0.3rem vars.$normal-padding;
+      border-radius: vars.$normal-border-radius;
+
+      margin: 0;
+    }
+  }
+  .category {
+    grid-area: stack;
+    z-index: 2;
+
+    font-size: vars.$fz-m-xs;
+
+    @include mixin.mq(sm) {
+      font-size: vars.$fz-xs;
+    }
+  }
+  .texts-bottom-container {
+    grid-area: stack;
+    z-index: 2;
+    align-self: end;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+
+    width: 100%;
+
+    padding: vars.$normal-padding;
+    color: vars.$text-light;
+
+    .participant,
+    .price {
+      display: grid;
+      grid-template-areas: "icon text" "icon text";
+      grid-template-columns: [icon-start] auto [icon-end text-start] 1fr [text-end];
+      justify-self: center;
+      align-items: center;
+      column-gap: 1rem;
+      width: 100%;
+      height: 100%;
+      .icon {
+        grid-area: icon;
+        display: flex;
+        align-items: center;
+        height: 0;
+        min-height: 100%;
+      }
+      .texts {
+        grid-area: text;
+        display: grid;
+
+        text-shadow: 1px 1px 1px black;
+      }
+    }
+  }
+}

@@ -45,9 +45,11 @@
 
   > img {
     grid-area: img;
+    object-fit: contain;
     max-width: 100%;
-    width: fns.px_to_rem(610);
-    height: fns.px_to_rem(382);
+    margin: 0 auto;
+    // image should be at the center
+
     @include mixin.mq(sm) {
       justify-self: end;
       width: auto;
