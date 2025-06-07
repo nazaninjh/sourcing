@@ -25,9 +25,9 @@ export default function FooterComponent() {
                 }}
               />
             </li>
-            {content.beigi.items.map((item) => {
+            {content.beigi.items.map((item, index) => {
               return (
-                <li key={item.linkAddress || item.addres}>
+                <li key={item.linkAddress + item.title + index}>
                   <span> {item.icon}</span>
                   <span>{item.title}</span>
                   <Link href={item.linkAddress ? item.linkAddress : "#"}>
@@ -39,9 +39,9 @@ export default function FooterComponent() {
           </ul>
           <ul>
             <li className={styles.heading}>{content.media.heading}</li>
-            {content.media.items.map((item) => {
+            {content.media.items.map((item, index) => {
               return (
-                <li key={item.addres}>
+                <li key={item.addres + item.title + index}>
                   <Image src={item.icon} alt="" width={18} height={18} />
                   <span>{item.title}</span>
 
