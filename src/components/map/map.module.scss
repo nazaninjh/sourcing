@@ -1,0 +1,14 @@
+@use "./../../app/styles/mixins" as mixin;
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  .item {
+    width: 100%;
+    max-width: 100%;
+    @include mixin.mq(sm) {
+      max-width: 50%;
+    }
+  }
+}
