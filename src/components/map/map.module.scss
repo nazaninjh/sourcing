@@ -13,7 +13,7 @@
   @include mixin.mq(sm) {
     flex-direction: row-reverse;
     align-items: center;
-    gap: 1rem;
+    column-gap: vars.$flex-col-gap;
     flex: 1;
   }
 
@@ -28,10 +28,17 @@
   }
 
   .texts {
+    flex: 1;
     .title {
       display: flex;
       gap: 0.3rem;
       width: 100%;
+      font-size: vars.$fz-m-md;
+      font-weight: 600;
+
+      @include mixin.mq(sm) {
+        font-size: vars.$fz-md;
+      }
       .continent {
         display: flex;
         flex-direction: column;
@@ -72,9 +79,14 @@
 
     .content {
       margin: 0;
+      font-size: vars.$fz-m-sm;
+      @include mixin.mq(sm) {
+        font-size: vars.$fz-sm;
+      }
     }
   }
   .item {
+    flex: 1;
     width: 100%;
     max-width: 100%;
 

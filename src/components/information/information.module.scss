@@ -15,7 +15,7 @@
     display: grid;
     grid-template-areas: "texts img";
     grid-template-columns: 1fr 1fr;
-    column-gap: 0.5rem;
+    column-gap: vars.$flex-col-gap;
     justify-content: space-between;
     align-items: center;
   }
@@ -56,9 +56,8 @@
       height: auto;
     }
     @include mixin.mq(xl) {
-      justify-self: end;
-      width: fns.px_to_rem(610);
-      height: fns.px_to_rem(382);
+      object-fit: cover;
+      width: 100%;
     }
   }
   .mobile-title {
