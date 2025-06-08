@@ -1,7 +1,7 @@
 // colors
 $color-primary: rgba(62, 95, 144, 1);
 $color-secondary: rgba(0, 165, 148, 1);
-$color-red: rgba(208, 77, 77, 1);
+$color-red: rgb(208, 77, 77);
 $color-dark-gray: rgba(19, 19, 19, 1);
 
 $color-bg: rgba(249, 249, 255, 1);
@@ -32,18 +32,18 @@ $fz-heading-lg: clamp(3.5625rem, 3.2125rem + 0.875vw, 4rem);
 $fz-heading-md: clamp(2.8125rem, 2.4625rem + 0.875vw, 3.25rem);
 $fz-heading-sm: clamp(2.75rem, 3.15rem + -1vw, 2.25rem);
 
-// mobile
-$fz-m-xs: clamp(0.6rem, 0.5222rem + 0.4444vw, 0.7rem);
-$fz-m-sm: clamp(0.75rem, 0.5556rem + 1.1111vw, 1rem);
-$fz-m-md: clamp(0.875rem, 0.5833rem + 1.6667vw, 1.25rem);
-$fz-m-lg: clamp(1rem, 0.6111rem + 2.2222vw, 1.5rem);
-
-// desktop
-$fz-xs: clamp(0.6rem, 0.52rem + 0.2vw, 0.7rem);
-$fz-sm: clamp(0.75rem, 0.55rem + 0.5vw, 1rem);
-$fz-md: clamp(0.875rem, 0.575rem + 0.75vw, 1.25rem);
-$fz-lg: clamp(1rem, 0.6rem + 1vw, 1.5rem);
+$fz-xs: clamp(0.6rem, 0.5222rem + 0.4444vw, 0.7rem);
+$fz-sm: clamp(0.75rem, 0.5556rem + 1.1111vw, 1rem);
+$fz-md: clamp(0.875rem, 0.5833rem + 1.6667vw, 1.25rem);
+$fz-lg: clamp(1rem, 0.6111rem + 2.2222vw, 1.5rem);
 
 // width
 
 $max-page-width: 1440px;
+
+@media (min-width: 40rem) {
+  $fz-xs: clamp(0.6rem, 0.52rem + 0.2vw, 0.7rem);
+  $fz-sm: clamp(0.75rem, 0.55rem + 0.5vw, 1rem);
+  $fz-md: clamp(0.875rem, 0.575rem + 0.75vw, 1.25rem);
+  $fz-lg: clamp(1rem, 0.6rem + 1vw, 1.5rem);
+}

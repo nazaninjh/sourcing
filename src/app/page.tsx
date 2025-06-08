@@ -4,6 +4,7 @@ import IntroComponent from "@/components/intro/intro.component";
 import InformationComponent from "@/components/information/information.component";
 import BiddingComponent from "@/components/bidding/bidding.component";
 import MapComponent from "@/components/map/map.component";
+import ArchivedComponent from "@/components/Home/archived-projects/archived.component";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <InformationComponent />
       <BiddingComponent />
       <MapComponent />
+      <ArchivedComponent />
       <FooterComponent />
     </main>
   );

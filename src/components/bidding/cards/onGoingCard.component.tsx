@@ -35,6 +35,7 @@ export default function OnGoingCardComponent({
         props={{
           hasOverlay: true,
           img: <Image src={imgSrc} alt="عکس پروژه" width={387} height={255} />,
+
           topChildren: {
             direction: "start",
             child: (

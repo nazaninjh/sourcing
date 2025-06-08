@@ -3,10 +3,8 @@
 @use "./../../../app/styles/mixins" as mixin;
 .wrapper {
   @extend %grid-stack;
-  font-size: vars.$fz-m-sm;
-  @include mixin.mq(sm) {
-    font-size: vars.$fz-sm;
-  }
+  font-size: vars.$fz-sm;
+
   > img {
     grid-area: stack;
     z-index: 1;

@@ -105,11 +105,11 @@
     }
 
     > h1 {
-      font-size: vars.$fz-m-lg;
+      font-size: vars.$fz-lg;
     }
 
     > h4 {
-      font-size: vars.$fz-m-md;
+      font-size: vars.$fz-md;
     }
 
     @include mixin.mq(sm) {

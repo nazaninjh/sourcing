@@ -3,13 +3,10 @@
 @use "./../../app//styles/variables" as vars;
 .container {
   display: grid;
-  font-size: vars.$fz-m-sm;
+  font-size: vars.$fz-sm;
   width: 100%;
   max-width: 100%;
 
-  @include mixin.mq(sm) {
-    font-size: vars.$fz-sm;
-  }
   .uls {
     display: grid;
     row-gap: 0.5rem;

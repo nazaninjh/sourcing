@@ -1,4 +1,3 @@
-// imageMap.ts
 import counseling from "./assets/images/counseling.webp";
 import insurance from "./assets/images/insurance.webp";
 import support from "./assets/images/support.webp";

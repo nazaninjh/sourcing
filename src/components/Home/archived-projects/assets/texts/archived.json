@@ -1,0 +1,45 @@
+{
+  "title": "پروژ‌های آرشیو شده",
+  "projects": [
+    {
+      "category": "ویلایی",
+      "img": "archive1",
+      "badge": {
+        "number": "% 15-",
+        "text": "صـرفه جـویی"
+      }
+    },
+    {
+      "category": "ویلایی",
+      "img": "archive1",
+      "badge": {
+        "number": "% 15-",
+        "text": "صـرفه جـویی"
+      }
+    },
+    {
+      "category": "ویلایی",
+      "img": "archive1",
+      "badge": {
+        "number": "% 15-",
+        "text": "صـرفه جـویی"
+      }
+    },
+    {
+      "category": "ویلایی",
+      "img": "archive1",
+      "badge": {
+        "number": "% 15-",
+        "text": "صـرفه جـویی"
+      }
+    },
+    {
+      "category": "ویلایی",
+      "img": "archive1",
+      "badge": {
+        "number": "% 15-",
+        "text": "صـرفه جـویی"
+      }
+    }
+  ]
+}

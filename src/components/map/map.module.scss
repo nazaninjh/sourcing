@@ -35,8 +35,9 @@
 
     .title {
       display: flex;
+      gap: 0.3rem;
       width: 100%;
-      font-size: vars.$fz-m-xs;
+      font-size: vars.$fz-xs;
       font-weight: 600;
 
       @include mixin.mq(sm) {
@@ -50,7 +51,7 @@
         text-align: center;
         color: vars.$color-primary;
 
-        font-size: vars.$fz-m-xs;
+        font-size: calc(vars.$fz-xs - 0.1rem);
         &.africa {
           color: vars.$color-secondary;
         }
@@ -75,11 +76,11 @@
           }
           &.east {
             color: vars.$color-primary;
-            font-size: vars.$fz-m-sm;
+            font-size: vars.$fz-sm;
           }
           &.africa {
             color: vars.$color-secondary;
-            font-size: vars.$fz-m-sm;
+            font-size: vars.$fz-sm;
           }
         }
       }
@@ -87,10 +88,7 @@
 
     .content {
       margin: 0;
-      font-size: vars.$fz-m-sm;
-      @include mixin.mq(sm) {
-        font-size: vars.$fz-sm;
-      }
+      font-size: vars.$fz-sm;
     }
   }
   .item {

@@ -1,0 +1,66 @@
+@use "./../../../app/styles/mixins" as mixin;
+@use "./../../../app/styles/functions" as fns;
+@use "./../../../app/styles/variables" as vars;
+@use "./../../../app/styles/placeholders";
+.container {
+  display: grid;
+  row-gap: 1rem;
+  width: 100%;
+  height: 100%;
+  margin-block: vars.$component-margin;
+  .title {
+    color: vars.$color-primary;
+    font-size: vars.$fz-md;
+    font-weight: 600;
+  }
+  .projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+
+    .img {
+      width: fns.px_to_rem(150);
+      height: fns.px_to_rem(152);
+      object-fit: cover;
+      @include mixin.mq(sm) {
+        width: fns.px_to_rem(300);
+        height: fns.px_to_rem(350);
+      }
+      @include mixin.mq(xl) {
+        width: fns.px_to_rem(450);
+        height: fns.px_to_rem(500);
+      }
+    }
+
+    // todo: fix clip path
+
+    .top-texts {
+      @extend %grid-stack;
+      .texts {
+        grid-area: stack;
+        z-index: 2;
+        color: vars.$text-light;
+        > p {
+          margin: 0;
+          padding-inline-start: 0.2rem;
+          font-size: vars.$fz-xs;
+
+          text-align: start;
+        }
+
+        .percent {
+          font-size: vars.$fz-md;
+          font-weight: 800;
+          text-align: center;
+        }
+      }
+    }
+    .category {
+      color: vars.$text-light;
+      padding-inline-start: 0.3rem;
+      font-size: vars.$fz-md;
+      font-weight: 600;
+    }
+  }
+}

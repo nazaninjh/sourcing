@@ -1,0 +1,60 @@
+import Image from "next/image";
+import GridImageComponent from "@/components/shared/grid-image/gridImage.component";
+
+import texts from "./assets/texts/archived.json";
+
+import { imageMap } from "./imageMap";
+import styles from "./archived.module.scss";
+import PolygonIcon from "./assets/icons/polygon.icon";
+
+export default function ArchivedComponent() {
+  return (
+    <section className="wrapper">
+      <div className={styles.container}>
+        <p className={styles.title}>{texts.title}</p>
+        <div className={styles.projects}>
+          {texts.projects.map((project) => {
+            return (
+              <GridImageComponent
+                key={project.img + project.category}
+                props={{
+                  hasOverlay: false,
+                  img: (
+                    <Image
+                      src={imageMap[project.img]}
+                      alt=""
+                      width={350}
+                      height={400}
+                      className={styles.img}
+                    />
+                  ),
+                  topChildren: {
+                    direction: "start",
+                    child: (
+                      <div className={styles["top-texts"]}>
+                        <PolygonIcon />
+
+                        <div className={styles.texts}>
+                          <p className={styles.percent}>
+                            {project.badge.number}
+                          </p>
+                          <p>{project.badge.text}</p>
+                        </div>
+                      </div>
+                    ),
+                  },
+                  bottomChildren: {
+                    direction: "start",
+                    child: (
+                      <p className={styles.category}>{project.category}</p>
+                    ),
+                  },
+                }}
+              />
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}

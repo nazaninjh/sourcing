@@ -15,7 +15,7 @@
     row-gap: 0.8rem;
     justify-items: center;
     align-items: center;
-    font-size: vars.$fz-m-sm;
+    font-size: vars.$fz-sm;
     @include mixin.mq(sm) {
       font-size: vars.$fz-sm;
       font-weight: 100;
