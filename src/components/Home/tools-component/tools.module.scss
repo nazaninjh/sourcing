@@ -1,6 +1,17 @@
 @use "./../../../app/styles/placeholders";
 @use "./../../../app/styles/variables" as vars;
 @use "./../../../app/styles/mixins" as mixin;
+@use "./../../../app/styles/functions" as fns;
+.wrapper {
+  padding-inline: 0;
+  @include mixin.mq(sm) {
+    padding-inline: 2rem;
+  }
+  @include mixin.mq(2xl) {
+    padding-inline: 0px;
+    padding-block: 0px;
+  }
+}
 .container {
   display: grid;
   justify-items: center;
@@ -10,22 +21,23 @@
   width: 100%;
   max-width: 100%;
 
-  @include mixin.mq(lg) {
-    display: flex;
-    flex-direction: row-reverse;
+  margin-block: vars.$component-margin;
+
+  @include mixin.mq(sm) {
+    display: grid;
+    grid-template-areas: "texts box";
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-  }
-  @include mixin.mq(2xl) {
-    max-width: vars.$max-page-width;
-    margin: 0 auto;
-    padding-inline: 0px;
-    padding-block: 0px;
+    column-gap: vars.$two-col-gap;
+
+    max-width: 100%;
   }
 
   .box {
     @extend %grid-stack;
 
     @include mixin.mq(sm) {
+      grid-area: box;
       flex: 0 1 auto;
     }
 
@@ -43,9 +55,19 @@
     }
     .bg-desktop {
       display: none;
-      @include mixin.mq(lg) {
-        grid-area: stack;
-        display: inline-flex;
+      grid-area: stack;
+
+      object-fit: contain;
+
+      @include mixin.mq(sm) {
+        display: flex;
+        width: 100%;
+        max-width: fns.px_to_rem(700);
+
+        position: relative; // REQUIRED for `fill` to work
+        aspect-ratio: 700 / 400;
+        width: 100%;
+        max-width: fns.px_to_rem(700);
       }
     }
     > img {
@@ -65,8 +87,10 @@
     flex-direction: column;
     gap: 0.5rem;
     width: 100%;
+    max-width: 100%;
 
     @include mixin.mq(sm) {
+      grid-area: texts;
       flex: 1 0 auto;
       max-width: 700px;
       gap: 1rem;
