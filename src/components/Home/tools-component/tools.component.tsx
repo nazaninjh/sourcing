@@ -9,9 +9,9 @@ export default function ToolsComponent() {
     <section className={styles.container}>
       <div className={styles.box}>
         <div className={styles.bg} />
-        {/* <div className={styles["bg-desktop"]}>
-          <Image src={rectangle} alt="جرثقیل" width={686} height={433} />
-        </div> */}
+        <div className={styles["bg-desktop"]}>
+          <Image src={rectangle} alt="جرثقیل" width={586} height={333} />
+        </div>
         <Image src={crane} alt="جرثقیل" width={428} height={269} />
       </div>
 
