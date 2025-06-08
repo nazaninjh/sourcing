@@ -5,6 +5,7 @@ import InformationComponent from "@/components/information/information.component
 import BiddingComponent from "@/components/bidding/bidding.component";
 import MapComponent from "@/components/map/map.component";
 import ArchivedComponent from "@/components/Home/archived-projects/archived.component";
+import ToolsComponent from "@/components/Home/tools-component/tools.component";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <BiddingComponent />
       <MapComponent />
       <ArchivedComponent />
+      <ToolsComponent />
       <FooterComponent />
     </main>
   );

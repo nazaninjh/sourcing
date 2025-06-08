@@ -1,0 +1,59 @@
+@use "./../../../app/styles/placeholders";
+@use "./../../../app/styles/variables" as vars;
+@use "./../../../app/styles/mixins" as mixin;
+.container {
+  display: grid;
+  justify-items: center;
+  row-gap: 0.5rem;
+
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+
+  .box {
+    @extend %grid-stack;
+    .bg {
+      grid-area: stack;
+      align-self: end;
+      z-index: 1;
+      background-color: rgba(62, 95, 144, 0.1);
+      height: 86%;
+      width: 100%;
+    }
+    > img {
+      grid-area: stack;
+      z-index: 2;
+      align-self: start;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .txt {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+
+    > p {
+      margin: 0;
+    }
+    .title {
+      font-weight: 600;
+      font-size: vars.$fz-md;
+
+      color: vars.$text-dark;
+    }
+
+    .content {
+      font-size: vars.$fz-sm;
+      font-weight: 500;
+      color: vars.$text-gray;
+    }
+
+    > button {
+      @include mixin.GlobalBtn;
+    }
+  }
+}

@@ -69,6 +69,30 @@
   }
 }
 
+%wrapper {
+  max-width: 100%;
+  padding-inline: 1rem;
+  padding-block: 0px;
+}
+
+@media (min-width: 40rem) and (max-width: 90rem) {
+  %wrapper {
+    max-width: vars.$max-page-width;
+    margin: 0 auto;
+    padding-inline: 2rem;
+    padding-block: 0px;
+  }
+}
+
+@media (min-width: 90rem) {
+  %wrapper {
+    max-width: vars.$max-page-width;
+    margin: 0 auto;
+    padding-inline: 0px;
+    padding-block: 0px;
+  }
+}
+
 %grid-stack {
   display: grid;
   grid-template-columns: 1fr;
