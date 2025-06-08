@@ -1,9 +1,9 @@
 import texts from "./assets/texts/bidding.json";
 import OnGoingCardComponent from "./cards/onGoingCard.component";
 import { iconMap } from "./iconMap";
-import { imageMap } from "./imageMap";
 
 import styles from "./bidding.module.scss";
+import { mapImages } from "@/assets/images/mentor/mapImages";
 export default function BiddingComponent() {
   // todo: add button to toggle projects
   return (
@@ -14,7 +14,7 @@ export default function BiddingComponent() {
           return (
             <OnGoingCardComponent
               key={item.name}
-              imgSrc={imageMap[item.img]}
+              imgSrc={mapImages("bidding", item.img)}
               topStartTxts={{
                 name: item.name,
                 competitionCategory: item.competitionCategory,

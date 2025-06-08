@@ -15,7 +15,7 @@
     display: grid;
     grid-template-areas: "texts img";
     grid-template-columns: 1fr 1fr;
-    column-gap: vars.$flex-col-gap;
+    column-gap: vars.$two-col-gap;
     justify-content: space-between;
     align-items: center;
   }

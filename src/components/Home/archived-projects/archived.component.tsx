@@ -3,9 +3,9 @@ import GridImageComponent from "@/components/shared/grid-image/gridImage.compone
 
 import texts from "./assets/texts/archived.json";
 
-import { imageMap } from "./imageMap";
 import styles from "./archived.module.scss";
 import PolygonIcon from "./assets/icons/polygon.icon";
+import { mapImages } from "@/assets/images/mentor/mapImages";
 
 export default function ArchivedComponent() {
   return (
@@ -21,7 +21,7 @@ export default function ArchivedComponent() {
                   hasOverlay: false,
                   img: (
                     <Image
-                      src={imageMap[project.img]}
+                      src={mapImages("archived", project.img)}
                       alt=""
                       width={350}
                       height={400}

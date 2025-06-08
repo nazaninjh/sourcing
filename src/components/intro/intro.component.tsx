@@ -1,7 +1,8 @@
 import Image from "next/image";
 import texts from "./assets/texts/intro.json";
-import { imageMap } from "./imageMap";
+
 import styles from "./intro.module.scss";
+import { mapImages } from "@/assets/images/mentor/mapImages";
 export default function IntroComponent() {
   return (
     <div className="wrapper">
@@ -9,7 +10,12 @@ export default function IntroComponent() {
         {texts.map((text) => {
           return (
             <div className={styles.card} key={text.img}>
-              <Image src={imageMap[text.img]} alt="" width={100} height={100} />
+              <Image
+                src={mapImages("intro", text.img)}
+                alt=""
+                width={100}
+                height={100}
+              />
               <span> {text.title}</span>
             </div>
           );

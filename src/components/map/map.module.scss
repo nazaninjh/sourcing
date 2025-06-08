@@ -17,7 +17,7 @@
     flex: 1;
   }
   @include mixin.mq(lg) {
-    column-gap: vars.$flex-col-gap;
+    column-gap: vars.$two-col-gap;
   }
 
   :global {
