@@ -61,8 +61,6 @@
 
       @include mixin.mq(sm) {
         display: flex;
-        width: 100%;
-        max-width: fns.px_to_rem(700);
 
         position: relative; // REQUIRED for `fill` to work
         aspect-ratio: 700 / 400;
