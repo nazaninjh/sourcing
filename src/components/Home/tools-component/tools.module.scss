@@ -91,11 +91,15 @@
       grid-area: texts;
       flex: 1 0 auto;
       max-width: 700px;
-      gap: 1rem;
+      gap: 3.5rem;
     }
 
     > p {
       margin: 0;
+      padding-inline: 1rem;
+      @include mixin.mq(sm) {
+        padding-inline: auto;
+      }
     }
     .title {
       font-weight: 600;
@@ -112,6 +116,11 @@
 
     > button {
       @include mixin.GlobalBtn;
+      margin-inline: 1rem;
+
+      @include mixin.mq(sm) {
+        margin-inline: 0;
+      }
     }
   }
 }

@@ -7,9 +7,12 @@ import { useState } from "react";
 import clsx from "clsx";
 
 export default function MentorsComponent() {
-  const [hovered, setHovered] = useState({
+  const [hovered, setHovered] = useState<{
+    state: boolean;
+    index: null | number;
+  }>({
     state: false,
-    index: 0,
+    index: null,
   });
 
   return (
