@@ -6,6 +6,7 @@
   padding-inline: 0;
   @include mixin.mq(sm) {
     padding-inline: 2rem;
+    padding-inline: 0px;
   }
   @include mixin.mq(2xl) {
     padding-inline: 0px;
@@ -96,7 +97,7 @@
     > p {
       margin: 0;
       padding-inline: 1rem;
-      @include mixin.mq(sm) {
+      @include mixin.mq(2xl) {
         padding-inline: auto;
       }
     }
@@ -117,7 +118,7 @@
       @include mixin.GlobalBtn;
       margin-inline: 1rem;
 
-      @include mixin.mq(sm) {
+      @include mixin.mq(2xl) {
         margin-inline: 0;
       }
     }
