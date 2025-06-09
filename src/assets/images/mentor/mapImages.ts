@@ -1,4 +1,7 @@
 import { StaticImageData } from "next/image";
+
+import hero1 from "@/assets/images/hero/home.webp";
+
 import mentor1 from "@/assets/images/mentor/mentor1.webp";
 import mentor2 from "@/assets/images/mentor/mentor2.webp";
 import mentor3 from "@/assets/images/mentor/mentor3.webp";
@@ -57,12 +60,16 @@ const newsImages: Record<string, StaticImageData> = {
   card1: newsCard1,
   card2: newsCard1,
 };
+const heroImages: Record<string, StaticImageData> = {
+  hero1,
+};
 const imageLists = {
   mentor: mentorImages,
   intro: introImages,
   bidding: biddingImages,
   archived: archivedImages,
   news: newsImages,
+  hero: heroImages,
 };
 
 type ImageListKey = keyof typeof imageLists;

@@ -3,6 +3,7 @@ import styles from "./gridImage.module.scss";
 type IProps = {
   img: ReactNode;
   hasOverlay: boolean;
+  customOverlay?: ReactNode;
   topChildren?: {
     direction: "end" | "start" | "center";
     child: ReactNode;
@@ -25,6 +26,9 @@ export default function GridImageComponent({ props }: { props: IProps }) {
       {props.img}
 
       {props.hasOverlay && <div className={styles.overlay} />}
+      {props.customOverlay && (
+        <div className={styles["custom-overlay"]}>{props.customOverlay}</div>
+      )}
 
       <div
         className={styles["top-children-container"]}
