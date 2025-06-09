@@ -24,7 +24,7 @@
 }
 
 @mixin mq($key) {
-  $size: map-get(
+  $size: map.get(
     $map: br.$breakpoints,
     $key: $key,
   );

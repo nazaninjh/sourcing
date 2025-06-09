@@ -35,7 +35,7 @@
 
   .box {
     @extend %grid-stack;
-
+    max-width: 100;
     @include mixin.mq(sm) {
       grid-area: box;
       flex: 0 1 auto;
@@ -63,9 +63,8 @@
         display: flex;
 
         position: relative; // REQUIRED for `fill` to work
-        aspect-ratio: 700 / 400;
+
         width: 100%;
-        max-width: fns.px_to_rem(700);
       }
     }
     > img {

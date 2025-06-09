@@ -5,6 +5,7 @@
   @include mixin.mq(sm) {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(auto-fit, minmax(0, 1fr));
-    gap: 0.5rem;
+    column-gap: 2rem;
+    row-gap: 1rem;
   }
 }

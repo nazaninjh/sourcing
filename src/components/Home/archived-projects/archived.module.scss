@@ -24,7 +24,7 @@
       height: fns.px_to_rem(152);
       object-fit: cover;
       @include mixin.mq(sm) {
-        width: fns.px_to_rem(300);
+        width: fns.px_to_rem(250);
         height: fns.px_to_rem(350);
       }
       @include mixin.mq(xl) {

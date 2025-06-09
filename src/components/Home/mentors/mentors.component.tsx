@@ -37,18 +37,8 @@ export default function MentorsComponent() {
                     src={mapImages("mentor", mentor.profile)}
                     alt={mentor.name}
                     fill
-                    onPointerDown={() =>
-                      setHovered({
-                        index: index,
-                        state: true,
-                      })
-                    }
-                    onPointerUp={() =>
-                      setHovered({
-                        index: index,
-                        state: false,
-                      })
-                    }
+                    onTouchStart={() => setHovered({ index, state: true })}
+                    onTouchEnd={() => setHovered({ index: null, state: false })}
                   />
                 </div>
                 <div
