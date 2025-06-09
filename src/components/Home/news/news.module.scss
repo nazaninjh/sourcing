@@ -25,7 +25,7 @@
   }
   .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(fns.px_to_rem(180), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(fns.px_to_rem(200), 1fr));
 
     row-gap: 0.5rem;
     column-gap: 1rem;
@@ -71,7 +71,7 @@
       .img-container {
         position: relative;
 
-        height: fns.px_to_rem(180);
+        height: fns.px_to_rem(200);
 
         @include mixin.mq(lg) {
           height: fns.px_to_rem(200);
