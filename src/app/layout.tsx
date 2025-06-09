@@ -86,6 +86,16 @@ export const metadata: Metadata = {
   //   locale: 'en_US',
   //   type: 'website',
   // },
+
+  //  icons: {
+  //   icon: '/icon.png',
+  //   shortcut: '/shortcut-icon.png',
+  //   apple: '/apple-icon.png',
+  //   other: {
+  //     rel: 'apple-touch-icon-precomposed',
+  //     url: '/apple-touch-icon-precomposed.png',
+  //   },
+  // },
 };
 
 export default function RootLayout({

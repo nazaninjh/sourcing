@@ -1,0 +1,66 @@
+@use "./../../../app/styles/variables" as vars;
+@use "./../../../app/styles/mixins" as mixin;
+@use "./../../../app/styles/functions" as fns;
+.container {
+  max-height: 100%;
+  width: 100%;
+  max-width: 100%;
+
+  :global {
+    .ant-carousel {
+      .slick-prev,
+      .slick-next {
+        color: vars.$color-primary;
+      }
+    }
+  }
+  .items {
+    .slide {
+      display: flex !important;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      width: 100%;
+
+      @include mixin.mq(sm) {
+        justify-content: space-around;
+      }
+
+      @include mixin.mq(lg) {
+        justify-content: space-around;
+        > img {
+          min-width: fns.px_to_rem(150);
+          max-width: 100%;
+          height: auto;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 40rem) {
+  .container {
+    .items {
+      :global {
+        .ant-carousel {
+          .slick-prev,
+          .slick-next {
+            color: vars.$color-primary;
+            z-index: 2;
+            inset-block-start: -2vh !important;
+            @include mixin.mq(sm) {
+              top: auto !important;
+            }
+          }
+          .slick-prev {
+            inset-inline-start: 0 !important;
+          }
+          .slick-next {
+            inset-inline-start: 5rem !important;
+          }
+        }
+      }
+    }
+  }
+}

@@ -4,13 +4,12 @@ import { isMobile } from "react-device-detect";
 import { AfricaImage } from "./assets/images/africa.image";
 import { IranImage } from "./assets/images/iran.image";
 
-import styles from "./map.module.scss";
-
 import { Carousel } from "antd";
 import { useState } from "react";
 import texts from "./assets/texts/map.json";
 import clsx from "clsx";
 import TextIcon from "./assets/icons/text.icon";
+import styles from "./map.module.scss";
 
 export default function MapComponent() {
   const [currentContinent, setCurrentContinent] = useState<{
