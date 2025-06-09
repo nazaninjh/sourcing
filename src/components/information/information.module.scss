@@ -22,10 +22,14 @@
 
   .texts {
     grid-area: texts;
+    display: grid;
+    row-gap: 1rem;
     .title {
       display: none;
       @include mixin.mq(lg) {
         display: inline;
+        font-size: vars.$fz-md;
+        font-weight: 500;
       }
     }
     .categories {
@@ -40,6 +44,7 @@
     .content {
       color: vars.$text-gray;
       font-size: vars.$fz-sm;
+      font-weight: 500;
     }
   }
 

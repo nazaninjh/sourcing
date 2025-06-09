@@ -14,6 +14,13 @@
       }
     }
   }
+
+  .title {
+    color: vars.$color-primary;
+
+    font-weight: 600;
+    font-size: vars.$fz-md;
+  }
   .items {
     .slide {
       display: flex !important;

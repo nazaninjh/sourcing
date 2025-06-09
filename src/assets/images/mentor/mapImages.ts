@@ -21,6 +21,9 @@ import project2 from "@/assets/images/bidding/project2.webp";
 import project2Desk from "@/assets/images/bidding/project2-desk.webp";
 
 import archive1 from "@/assets/images/archived/archive1.webp";
+
+import newsCard1 from "@/assets/images/news/card1.webp";
+
 import { isMobile } from "react-device-detect";
 
 const mentorImages: Record<string, StaticImageData> = {
@@ -49,11 +52,17 @@ const biddingImages: Record<string, StaticImageData> = {
 const archivedImages: Record<string, StaticImageData> = {
   archive1,
 };
+
+const newsImages: Record<string, StaticImageData> = {
+  card1: newsCard1,
+  card2: newsCard1,
+};
 const imageLists = {
   mentor: mentorImages,
   intro: introImages,
   bidding: biddingImages,
   archived: archivedImages,
+  news: newsImages,
 };
 
 type ImageListKey = keyof typeof imageLists;

@@ -1,5 +1,5 @@
-import styles from "./gridImage.module.scss";
 import { ReactNode } from "react";
+import styles from "./gridImage.module.scss";
 type IProps = {
   img: ReactNode;
   hasOverlay: boolean;

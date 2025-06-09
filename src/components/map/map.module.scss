@@ -40,8 +40,11 @@
       font-size: vars.$fz-xs;
       font-weight: 600;
 
-      @include mixin.mq(sm) {
+      @include mixin.mq(lg) {
         font-size: vars.$fz-sm;
+      }
+      @include mixin.mq(2xl) {
+        font-size: vars.$fz-md;
       }
       .continent {
         display: flex;
@@ -51,7 +54,6 @@
         text-align: center;
         color: vars.$color-primary;
 
-        font-size: calc(vars.$fz-xs - 0.1rem);
         &.africa {
           color: vars.$color-secondary;
         }
@@ -61,6 +63,8 @@
           opacity: 0;
           visibility: hidden;
 
+          font-size: vars.$fz-xs;
+
           height: 0;
           transform: translateY(-0.5rem);
 
@@ -68,6 +72,10 @@
             opacity 400ms ease-out,
             color 200ms ease-out,
             transform 300ms ease-out;
+
+          @include mixin.mq(lg) {
+            font-size: vars.$fz-sm;
+          }
           &.active {
             opacity: 1;
             visibility: visible;
@@ -76,11 +84,9 @@
           }
           &.east {
             color: vars.$color-primary;
-            font-size: vars.$fz-sm;
           }
           &.africa {
             color: vars.$color-secondary;
-            font-size: vars.$fz-sm;
           }
         }
       }
@@ -88,7 +94,10 @@
 
     .content {
       margin: 0;
-      font-size: vars.$fz-sm;
+      font-size: vars.$fz-xs;
+      @include mixin.mq(lg) {
+        font-size: vars.$fz-sm;
+      }
     }
   }
   .item {

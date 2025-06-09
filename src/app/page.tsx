@@ -8,6 +8,7 @@ import ArchivedComponent from "@/components/Home/archived-projects/archived.comp
 import ToolsComponent from "@/components/Home/tools-component/tools.component";
 import MentorsComponent from "@/components/Home/mentors/mentors.component";
 import BrandsComponent from "@/components/Home/brands/brands.component";
+import NewsComponent from "@/components/Home/news/news.component";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <ToolsComponent />
       <MentorsComponent />
       <BrandsComponent />
+      <NewsComponent />
       <FooterComponent />
     </main>
   );

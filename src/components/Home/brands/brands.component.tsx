@@ -1,7 +1,9 @@
 import Image from "next/image";
+import { Carousel } from "antd";
+
+import texts from "./assets/texts/brans.json";
 import brandImg from "./assets/images/brand.webp";
 import styles from "./brands.module.scss";
-import { Carousel } from "antd";
 export default function BrandsComponent() {
   const settings = {
     arrows: true,
@@ -11,7 +13,7 @@ export default function BrandsComponent() {
   return (
     <div className="wrapper">
       <div className={styles.container}>
-        <p>برند هایی که مارو انتخاب کردند</p>
+        <p className={styles.title}>{texts.title}</p>
         <div className={styles.items}>
           <Carousel {...settings}>
             <div className={styles.slide}>
