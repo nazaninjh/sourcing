@@ -1,30 +1,38 @@
 @use "./../../../app/styles/variables" as vars;
 @use "./../../../app/styles/functions" as fns;
 @use "./../../../app/styles/mixins" as mixin;
+@use "./../../../app/styles/placeholders";
 .container {
+  display: grid;
+  row-gap: 2rem;
   width: 100%;
   max-width: 100%;
+
+  margin-block: vars.$component-margin;
   .title {
+    font-size: vars.$fz-md;
+    font-weight: 600;
+    color: vars.$color-primary;
   }
   .contents {
     display: grid;
     row-gap: 1.5rem;
-    @include mixin.mq(sm) {
+    @include mixin.mq(lg) {
       grid-template-columns: auto 1fr;
       align-items: stretch;
+      column-gap: 1rem;
     }
   }
   .cards {
-    flex: 2;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(fns.px_to_rem(184), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(fns.px_to_rem(180), 1fr));
 
     row-gap: 0.5rem;
     column-gap: 1rem;
     width: fit-content;
     max-width: 100%;
 
-    @include mixin.mq(sm) {
+    @include mixin.mq(xl) {
       display: flex;
     }
     .card {
@@ -35,8 +43,12 @@
       border-block-start: none;
       border-radius: 0.75rem;
 
-      @include mixin.mq(sm) {
+      // important
+      @include mixin.mq(lg) {
         max-width: fns.px_to_rem(250);
+      }
+      @include mixin.mq(xl) {
+        max-width: fns.px_to_rem(350);
       }
 
       .texts {
@@ -56,31 +68,80 @@
         }
       }
 
-      > img {
-        width: 100%;
+      .img-container {
+        position: relative;
 
-        height: auto;
-        object-fit: contain;
+        height: fns.px_to_rem(180);
+
+        @include mixin.mq(lg) {
+          height: fns.px_to_rem(200);
+        }
+
+        > img {
+          width: 100%;
+
+          height: auto;
+          object-fit: cover;
+
+          border-start-start-radius: 0.5rem;
+          border-start-end-radius: 0.5rem;
+        }
       }
     }
   }
 
   .videos {
+    width: 100%;
+    height: 100%;
     .video {
-      .title {
+      @extend %grid-stack;
+      width: 100%;
+
+      height: fns.px_to_rem(300);
+      position: relative;
+
+      @include mixin.mq(lg) {
+        height: 100%;
+      }
+
+      .video-img {
+        grid-area: stack;
+
+        z-index: 1;
+
+        object-fit: cover;
+
+        border-radius: 0.5rem;
+
+        width: 100%;
+        height: auto;
+      }
+      .icon {
+        grid-area: stack;
+        z-index: 2;
+        align-self: center;
+        justify-self: center;
+      }
+      .video-title {
+        grid-area: stack;
+        z-index: 2;
+        align-self: end;
+        justify-self: start;
+
         color: vars.$text-light;
+        text-shadow: 1px 1px 5px gray;
         font-size: vars.$fz-lg;
         font-weight: 500;
         padding: 0.5rem;
       }
-      > img {
-        position: relative;
-        width: 100%;
-        height: 0;
-        min-height: 100%;
-        object-fit: contain;
+
+      .overlay {
+        position: absolute;
+        z-index: 2;
+        inset: 0;
 
         border-radius: 0.5rem;
+        @extend %overlay;
       }
     }
   }

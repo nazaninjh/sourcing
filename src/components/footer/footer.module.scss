@@ -3,6 +3,7 @@
 @use "./../../app//styles/variables" as vars;
 .container {
   display: grid;
+  row-gap: 0.5rem;
   font-size: vars.$fz-sm;
   width: 100%;
   max-width: 100%;
