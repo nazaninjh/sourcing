@@ -1,5 +1,4 @@
 @use "./../../app/styles/mixins" as mixin;
-@use "./../../app/styles/variables" as vars;
 .container {
   display: flex;
   flex-direction: column;
@@ -8,7 +7,7 @@
   width: 100%;
   max-width: 100%;
 
-  margin-block: vars.$component-margin;
+  margin-block: var(--component-margin);
 
   @include mixin.mq(sm) {
     flex-direction: row-reverse;
@@ -17,7 +16,7 @@
     flex: 1;
   }
   @include mixin.mq(lg) {
-    column-gap: vars.$two-col-gap;
+    column-gap: var(--two-col-gap);
   }
 
   :global {
@@ -37,14 +36,14 @@
       display: flex;
       gap: 0.3rem;
       width: 100%;
-      font-size: vars.$fz-xs;
+      font-size: var(--fz-xs);
       font-weight: 600;
 
       @include mixin.mq(lg) {
-        font-size: vars.$fz-sm;
+        font-size: var(--fz-sm);
       }
       @include mixin.mq(2xl) {
-        font-size: vars.$fz-md;
+        font-size: var(--fz-md);
       }
       .continent {
         display: flex;
@@ -52,18 +51,18 @@
         justify-content: center;
 
         text-align: center;
-        color: vars.$color-primary;
+        color: var(--color-primary);
 
         &.africa {
-          color: vars.$color-secondary;
+          color: var(--color-secondary);
         }
 
         .text {
-          color: vars.$color-secondary;
+          color: var(--color-secondary);
           opacity: 0;
           visibility: hidden;
 
-          font-size: vars.$fz-xs;
+          font-size: var(--fz-xs);
 
           height: 0;
           transform: translateY(-0.5rem);
@@ -74,7 +73,7 @@
             transform 300ms ease-out;
 
           @include mixin.mq(lg) {
-            font-size: vars.$fz-sm;
+            font-size: var(--fz-sm);
           }
           &.active {
             opacity: 1;
@@ -83,10 +82,10 @@
             transform: translateY(0rem);
           }
           &.east {
-            color: vars.$color-primary;
+            color: var(--color-primary);
           }
           &.africa {
-            color: vars.$color-secondary;
+            color: var(--color-secondary);
           }
         }
       }
@@ -94,9 +93,9 @@
 
     .content {
       margin: 0;
-      font-size: vars.$fz-xs;
+      font-size: var(--fz-xs);
       @include mixin.mq(lg) {
-        font-size: vars.$fz-sm;
+        font-size: var(--fz-sm);
       }
     }
   }

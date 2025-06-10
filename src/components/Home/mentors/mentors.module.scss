@@ -1,4 +1,3 @@
-@use "./../../../app/styles/variables" as vars;
 @use "./../../../app/styles/placeholders";
 @use "./../../../app/styles/mixins" as mixin;
 @use "./../../../app/styles/functions" as fns;
@@ -9,11 +8,11 @@
   width: 100%;
   height: 100%;
 
-  margin-block: vars.$component-margin;
+  margin-block: var(--component-margin);
 
   @include mixin.mq(sm) {
     grid-template-columns: 1fr 1fr;
-    column-gap: vars.$two-col-gap;
+    column-gap: var(--two-col-gap);
     align-items: center;
   }
   .texts {
@@ -22,20 +21,20 @@
       row-gap: 3rem;
     }
     .title {
-      color: vars.$color-primary;
-      font-size: vars.$fz-md;
+      color: var(--color-primary);
+      font-size: var(--fz-md);
       font-weight: 600;
     }
     .contents {
       display: grid;
       row-gap: 0.5rem;
-      font-size: vars.$fz-sm;
+      font-size: var(--fz-sm);
       > p:first-child {
-        color: vars.$text-dark;
+        color: var(--text-dark);
         font-weight: 600;
       }
       > p:last-child {
-        color: vars.$text-gray;
+        color: var(--text-gray);
         font-weight: 100;
       }
     }
@@ -84,12 +83,12 @@
 
         text-align: center;
 
-        font-size: vars.$fz-xs;
+        font-size: var(--fz-xs);
 
         opacity: 0;
         pointer-events: none;
 
-        font-size: vars.$fz-xs;
+        font-size: var(--fz-xs);
 
         transition: opacity 700ms cubic-bezier(0.4, 0, 1, 1);
 
@@ -137,8 +136,8 @@
       display: none;
       text-align: center;
 
-      font-size: vars.$fz-xs;
-      color: vars.$text-dark;
+      font-size: var(--fz-xs);
+      color: var(--text-dark);
 
       width: auto;
 

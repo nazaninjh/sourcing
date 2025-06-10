@@ -1,10 +1,21 @@
-@use "./styles/variables" as vars;
+@use "./styles/variable-maps" as varMap;
 @use "./styles//functions" as fns;
 @use "./styles/mixins" as mixin;
 @use "./styles/placeholders";
 
 :root {
-  font-family: var(--font-fa), "sans-serif";
+  font-family: var(--font-fa, "sans-serif");
+
+  @each $property, $value in varMap.$variables {
+    --#{$property}: #{$value};
+  }
+
+  @include mixin.mq(sm) {
+    --fz-xs: clamp(0.6rem, 0.52rem + 0.2vw, 0.7rem);
+    --fz-sm: clamp(0.75rem, 0.55rem + 0.5vw, 1rem);
+    --fz-md: clamp(0.875rem, 0.575rem + 0.75vw, 1.25rem);
+    --fz-lg: clamp(1rem, 0.6rem + 1vw, 1.5rem);
+  }
 }
 
 * {
@@ -33,7 +44,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: vars.$text-dark;
+  color: var(--text-dark);
 }
 
 p {
@@ -44,7 +55,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: vars.$color-bg;
+  background-color: var(--color-bg);
 
   max-width: 100%;
 }

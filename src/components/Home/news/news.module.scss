@@ -1,4 +1,3 @@
-@use "./../../../app/styles/variables" as vars;
 @use "./../../../app/styles/functions" as fns;
 @use "./../../../app/styles/mixins" as mixin;
 @use "./../../../app/styles/placeholders";
@@ -8,11 +7,11 @@
   width: 100%;
   max-width: 100%;
 
-  margin-block: vars.$component-margin;
+  margin-block: var(--component-margin);
   .title {
-    font-size: vars.$fz-md;
+    font-size: var(--fz-md);
     font-weight: 600;
-    color: vars.$color-primary;
+    color: var(--color-primary);
   }
   .contents {
     display: grid;
@@ -39,7 +38,7 @@
       display: grid;
       row-gap: 1rem;
 
-      border: 1px solid vars.$border-gray-light;
+      border: 1px solid var(--border-gray)-light;
       border-block-start: none;
       border-radius: 0.75rem;
 
@@ -57,8 +56,8 @@
 
         padding: 0.5rem;
 
-        font-size: vars.$fz-sm;
-        color: vars.$text-dark;
+        font-size: var(--fz-sm);
+        color: var(--text-dark);
         > p:first-child {
           font-weight: 800;
         }
@@ -128,9 +127,9 @@
         align-self: end;
         justify-self: start;
 
-        color: vars.$text-light;
+        color: var(--text-light);
         text-shadow: 1px 1px 5px gray;
-        font-size: vars.$fz-lg;
+        font-size: var(--fz-lg);
         font-weight: 500;
         padding: 0.5rem;
       }

@@ -1,5 +1,4 @@
 @use "./../../../app/styles/placeholders";
-@use "./../../../app/styles/variables" as vars;
 @use "./../../../app/styles/mixins" as mixin;
 @use "./../../../app/styles/functions" as fns;
 .wrapper {
@@ -22,14 +21,14 @@
   width: 100%;
   max-width: 100%;
 
-  margin-block: vars.$component-margin;
+  margin-block: var(--component-margin);
 
   @include mixin.mq(sm) {
     display: grid;
     grid-template-areas: "texts box";
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    column-gap: vars.$two-col-gap;
+    column-gap: var(--two-col-gap);
 
     max-width: 100%;
   }
@@ -103,15 +102,15 @@
     }
     .title {
       font-weight: 600;
-      font-size: vars.$fz-md;
+      font-size: var(--fz-md);
 
-      color: vars.$text-dark;
+      color: var(--text-dark);
     }
 
     .content {
-      font-size: vars.$fz-sm;
+      font-size: var(--fz-sm);
       font-weight: 500;
-      color: vars.$text-gray;
+      color: var(--text-gray);
     }
 
     > button {

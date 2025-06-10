@@ -1,4 +1,3 @@
-@use "./../../../app/styles/variables" as vars;
 @use "./../../../app/styles/mixins" as mixin;
 @use "./../../../app/styles/functions" as fns;
 .container {
@@ -6,22 +5,22 @@
   width: 100%;
   max-width: 100%;
 
-  margin-block: vars.$component-margin;
+  margin-block: var(--component-margin);
 
   :global {
     .ant-carousel {
       .slick-prev,
       .slick-next {
-        color: vars.$color-primary;
+        color: var(--color-primary);
       }
     }
   }
 
   .title {
-    color: vars.$color-primary;
+    color: var(--color-primary);
 
     font-weight: 600;
-    font-size: vars.$fz-md;
+    font-size: var(--fz-md);
   }
   .items {
     .slide {
@@ -55,7 +54,7 @@
         .ant-carousel {
           .slick-prev,
           .slick-next {
-            color: vars.$color-primary;
+            color: var(--color-primary);
             z-index: 2;
             inset-block-start: -2vh !important;
             @include mixin.mq(sm) {

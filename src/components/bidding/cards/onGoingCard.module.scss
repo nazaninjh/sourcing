@@ -1,9 +1,8 @@
 @use "./../../../app/styles/placeholders";
-@use "./../../../app/styles/variables" as vars;
 @use "./../../../app/styles/mixins" as mixin;
 .wrapper {
   @extend %grid-stack;
-  font-size: vars.$fz-sm;
+  font-size: var(--fz-sm);
 
   > img {
     grid-area: stack;
@@ -13,7 +12,7 @@
 
     object-fit: cover;
 
-    border-radius: vars.$normal-border-radius;
+    border-radius: var(--normal-border-radius);
 
     @include mixin.mq(sm) {
       width: 100%;
@@ -31,14 +30,14 @@
     width: 100%;
     max-width: 100%;
 
-    border-radius: vars.$normal-border-radius;
+    border-radius: var(--normal-border-radius);
   }
   .texts-top-container {
     display: flex;
     flex-direction: column;
 
     row-gap: 0;
-    padding: vars.$normal-padding;
+    padding: var(--normal-padding);
   }
   .name-container {
     display: flex;
@@ -55,10 +54,10 @@
       background-color: black;
     }
     .comp {
-      background-color: vars.$color-red;
-      color: vars.$text-light;
-      padding: 0.3rem vars.$normal-padding;
-      border-radius: vars.$normal-border-radius;
+      background-color: var(--color-red);
+      color: var(--text-light);
+      padding: 0.3rem var(--normal-padding);
+      border-radius: var(--normal-border-radius);
 
       margin: 0;
     }
@@ -67,15 +66,15 @@
     grid-area: stack;
     z-index: 2;
 
-    font-size: vars.$fz-xs;
+    font-size: var(--fz-xs);
   }
   .texts-bottom-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
     justify-items: center;
 
-    padding: vars.$normal-padding;
-    color: vars.$text-light;
+    padding: var(--normal-padding);
+    color: var(--text-light);
 
     .participant,
     .price {

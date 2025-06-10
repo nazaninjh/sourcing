@@ -1,9 +1,8 @@
 @use "./../../../app/styles/placeholders";
-@use "./../../../app/styles/variables" as vars;
 @use "./../../../app/styles/mixins" as mixin;
 .wrapper {
   @extend %grid-stack;
-  font-size: vars.$fz-sm;
+  font-size: var(--fz-sm);
 
   > img {
     grid-area: stack;
@@ -13,7 +12,7 @@
 
     object-fit: cover;
 
-    border-radius: vars.$normal-border-radius;
+    border-radius: var(--normal-border-radius);
 
     @include mixin.mq(sm) {
       width: 100%;
@@ -41,7 +40,7 @@
     width: 100%;
     max-width: 100%;
 
-    border-radius: vars.$normal-border-radius;
+    border-radius: var(--normal-border-radius);
   }
   .top-children-container {
     grid-area: stack;

@@ -1,9 +1,7 @@
-@use "./variables" as vars;
-
 :export {
-  fz-heading-lg: vars.$fz-heading-lg;
-  fz-heading-md: vars.$fz-heading-md;
-  fz-heading-sm: vars.$fz-heading-sm;
-  text-light: vars.$text-light;
-  text-dark: vars.$text-dark;
+  fz-heading-lg: var(--fz-heading-lg);
+  fz-heading-md: var(--fz-heading-md);
+  fz-heading-sm: var(--fz-heading-sm);
+  text-light: var(--text-light);
+  text-dark: var(--text-dark);
 }

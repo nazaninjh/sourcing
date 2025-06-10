@@ -1,10 +1,9 @@
 @use "./../../app//styles/placeholders.scss" as *;
 @use "./../../app//styles/mixins" as mixin;
-@use "./../../app//styles/variables" as vars;
 .container {
   display: grid;
   row-gap: 0.5rem;
-  font-size: vars.$fz-sm;
+  font-size: var(--fz-sm);
   width: 100%;
   max-width: 100%;
 
@@ -76,5 +75,5 @@
 }
 
 .heading {
-  font-size: vars.$fz-md;
+  font-size: var(--fz-md);
 }

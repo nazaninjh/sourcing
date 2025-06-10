@@ -1,6 +1,5 @@
 @use "./../../app//styles/mixins" as mixin;
 @use "./../../app//styles/placeholders";
-@use "./../../app/styles/variables" as vars;
 .nav {
   display: none;
   @include mixin.mq(sm) {
@@ -18,8 +17,8 @@
       grid-area: list;
       display: flex;
       gap: 0.5rem;
-      color: vars.$text-light;
-      font-size: vars.$fz-sm;
+      color: var(--text-light);
+      font-size: var(--fz-sm);
     }
     .btn-container {
       grid-area: btns;
@@ -35,7 +34,7 @@
         > span {
           display: flex;
           align-items: center;
-          font-size: vars.$fz-sm;
+          font-size: var(--fz-sm);
         }
       }
     }
@@ -43,7 +42,7 @@
 
   @include mixin.mq(xl) {
     > ul {
-      font-size: vars.$fz-md;
+      font-size: var(--fz-md);
       gap: 1rem;
     }
     .btn-container {

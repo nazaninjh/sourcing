@@ -1,5 +1,3 @@
-@use "./../../app/styles/variables" as vars;
-
 @use "./../../app/styles/mixins" as mixin;
 @use "./../../app/styles/functions" as fns;
 .container {
@@ -8,16 +6,16 @@
   justify-content: space-between;
   width: 100%;
 
-  margin-block: vars.$component-margin;
+  margin-block: var(--component-margin);
 
   .card {
     display: grid;
     row-gap: 0.8rem;
     justify-items: center;
     align-items: center;
-    font-size: vars.$fz-sm;
+    font-size: var(--fz-sm);
     @include mixin.mq(sm) {
-      font-size: vars.$fz-sm;
+      font-size: var(--fz-sm);
       font-weight: 100;
     }
 

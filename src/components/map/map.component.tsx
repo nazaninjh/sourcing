@@ -64,7 +64,7 @@ export default function MapComponent() {
                 className={clsx(
                   styles.text,
                   isAfrica && styles.active,
-                  isAfrica && styles.africa
+                  isAfrica && styles.africa,
                 )}
               >
                 {texts.title.africa}
@@ -73,7 +73,7 @@ export default function MapComponent() {
                 className={clsx(
                   styles.text,
                   !isAfrica && styles.active,
-                  !isAfrica && styles.east
+                  !isAfrica && styles.east,
                 )}
               >
                 {texts.title["middle-east"]}

@@ -44,7 +44,7 @@ export default function MentorsComponent() {
                 <div
                   className={clsx(
                     styles.overlay,
-                    hovered && hovered.index === index && styles.active
+                    hovered && hovered.index === index && styles.active,
                   )}
                 >
                   {mentor.speciality}

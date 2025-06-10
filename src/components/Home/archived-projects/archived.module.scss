@@ -1,16 +1,15 @@
 @use "./../../../app/styles/mixins" as mixin;
 @use "./../../../app/styles/functions" as fns;
-@use "./../../../app/styles/variables" as vars;
 @use "./../../../app/styles/placeholders";
 .container {
   display: grid;
   row-gap: 1rem;
   width: 100%;
   height: 100%;
-  margin-block: vars.$component-margin;
+  margin-block: var(--component-margin);
   .title {
-    color: vars.$color-primary;
-    font-size: vars.$fz-md;
+    color: var(--color-primary);
+    font-size: var(--fz-md);
     font-weight: 600;
   }
   .projects {
@@ -40,26 +39,26 @@
       .texts {
         grid-area: stack;
         z-index: 2;
-        color: vars.$text-light;
+        color: var(--text-light);
         > p {
           margin: 0;
           padding-inline-start: 0.2rem;
-          font-size: vars.$fz-xs;
+          font-size: var(--fz-xs);
 
           text-align: start;
         }
 
         .percent {
-          font-size: vars.$fz-md;
+          font-size: var(--fz-md);
           font-weight: 800;
           text-align: center;
         }
       }
     }
     .category {
-      color: vars.$text-light;
+      color: var(--text-light);
       padding-inline-start: 0.3rem;
-      font-size: vars.$fz-md;
+      font-size: var(--fz-md);
       font-weight: 600;
     }
   }

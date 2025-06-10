@@ -1,5 +1,4 @@
 @use "./../../app//styles/placeholders";
-@use "./../../app//styles/variables" as vars;
 @use "./../../app/styles/mixins" as mixin;
 
 .wrapper {
@@ -7,7 +6,7 @@
     .ant-carousel {
       .slick-prev,
       .slick-next {
-        color: vars.$text-light;
+        color: var(--text-light);
         opacity: 1;
         inline-size: 1rem !important;
         block-size: 1rem !important;
@@ -64,7 +63,7 @@
       display: grid;
 
       row-gap: 1rem;
-      color: vars.$text-light;
+      color: var(--text-light);
 
       width: fit-content;
       z-index: 3;
@@ -82,16 +81,16 @@
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        font-size: vars.$fz-sm;
+        font-size: var(--fz-sm);
         > button {
           @include mixin.GlobalBtn(
             $bg: transparent,
-            $color: vars.$text-light,
-            $border: vars.$text-light solid 1px
+            $color: var(--text-light),
+            $border: var(--text-light) solid 1px
           );
         }
         > button:last-child {
-          @include mixin.GlobalBtn($border: vars.$color-primary solid 1px);
+          @include mixin.GlobalBtn($border: var(--color-primary) solid 1px);
         }
       }
     }
@@ -102,7 +101,7 @@
 
     display: grid;
     row-gap: 0.5rem;
-    color: vars.$text-light;
+    color: var(--text-light);
 
     text-align: center;
 
@@ -115,11 +114,11 @@
     }
 
     > h1 {
-      font-size: vars.$fz-lg;
+      font-size: var(--fz-lg);
     }
 
     > h4 {
-      font-size: vars.$fz-md;
+      font-size: var(--fz-md);
     }
 
     @include mixin.mq(sm) {
