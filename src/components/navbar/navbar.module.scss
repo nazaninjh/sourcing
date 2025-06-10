@@ -81,6 +81,7 @@
     @include mixin.mq(sm) {
       min-width: 100vw;
       min-height: 100vh;
+      min-height: 100dvh;
     }
     .sidebar {
       @extend %ham-sidebar;
