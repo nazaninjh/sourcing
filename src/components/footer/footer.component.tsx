@@ -2,14 +2,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import LogoComponent from "../shared/logo-beigi/logo.component";
-import vars from "./../../app/styles/variables.module.scss";
+import vars from "@/app/styles/variables.module.scss";
 import useContent from "./assets/texts/useContent";
 import footerImg from "./assets/images/footer-img.webp";
-import styles from "./footer.module.scss";
 import scrollToTop from "@/functions/scrollToTop";
 
 import texts from "./assets/texts/footer.json";
 import GoUOIcon from "./assets/icons/goUp.icon";
+import styles from "./footer.module.scss";
 export default function FooterComponent() {
   const content = useContent();
 
@@ -28,11 +28,16 @@ export default function FooterComponent() {
             {content.beigi.items.map((item, index) => {
               return (
                 <li key={item.linkAddress + item.title + index}>
-                  <span> {item.icon}</span>
-                  <span>{item.title}</span>
-                  <Link href={item.linkAddress ? item.linkAddress : "#"}>
-                    {item.addres}
-                  </Link>
+                  <address>
+                    <span> {item.icon}</span>
+                    <span>{item.title}</span>
+                    <Link
+                      href={item.linkAddress ? item.linkAddress : "#"}
+                      target="_blank"
+                    >
+                      {item.addres}
+                    </Link>
+                  </address>
                 </li>
               );
             })}
@@ -41,11 +46,13 @@ export default function FooterComponent() {
             <li className={styles.heading}>{content.media.heading}</li>
             {content.media.items.map((item, index) => {
               return (
-                <li key={item.addres + item.title + index}>
-                  <Image src={item.icon} alt="" width={18} height={18} />
-                  <span>{item.title}</span>
-
-                  <Link href={item.addres ? item.addres : "#"} />
+                <li key={item.address + item.title + index}>
+                  <address>
+                    <Image src={item.icon} alt="" width={18} height={18} />
+                    <Link href={item.address || "#"} target="_blank">
+                      {item.title}
+                    </Link>
+                  </address>
                 </li>
               );
             })}

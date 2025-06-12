@@ -36,7 +36,7 @@ export default function useContent() {
       items: [
         {
           title: texts.linkedin.title,
-          addres: texts.linkedin.linkAdress,
+          address: texts.linkedin.linkAdress,
           icon: texts.linkedin.icon,
         },
         {
