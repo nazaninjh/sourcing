@@ -14,7 +14,7 @@ export default function SidebarDrawerComponent(props: IProps) {
   const sidebarRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const close = (e: MouseEvent) => {
+    const close = (e: TouchEvent) => {
       if (
         sidebarRef.current &&
         !sidebarRef.current?.contains(e.target as Node)
@@ -22,8 +22,8 @@ export default function SidebarDrawerComponent(props: IProps) {
         sidebarRef.current.classList.add("close");
       }
     };
-    document.addEventListener("mousedown", close);
-    return () => document.removeEventListener("mousedown", close);
+    document.addEventListener("touchstart", close);
+    return () => document.removeEventListener("touchstart", close);
   }, []);
 
   // Lock body scroll
@@ -41,22 +41,13 @@ export default function SidebarDrawerComponent(props: IProps) {
   const handleClose = () => {
     setOpenSidebar(false);
   };
-  useEffect(() => {
-    const handleKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        setOpenSidebar(false);
-      }
-    };
-    document.addEventListener("keydown", handleKey);
-    return () => document.removeEventListener("keydown", handleKey);
-  }, []);
 
   return (
     <div className={styles.wrapper}>
       <button
         type="button"
         className={styles.menuBtn}
-        onClick={() => setOpenSidebar((prev) => !prev)}
+        onTouchStart={() => setOpenSidebar((prev) => !prev)}
         aria-label="Toggle menu"
       >
         {props.hamburgerIcon}
@@ -67,7 +58,7 @@ export default function SidebarDrawerComponent(props: IProps) {
           styles.overlay,
           openSidebar ? styles.show : styles.close
         )}
-        onClick={handleClose}
+        onTouchStart={handleClose}
       />
 
       <aside
@@ -80,7 +71,7 @@ export default function SidebarDrawerComponent(props: IProps) {
         {props.hasCloseIcon && (
           <button
             type="button"
-            onClick={handleClose}
+            onTouchStart={handleClose}
             className={styles.closeBtn}
           >
             {props.closeIcon}
