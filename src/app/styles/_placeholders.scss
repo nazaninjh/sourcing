@@ -2,30 +2,6 @@
 @use "./mixins" as mixin;
 @use "sass:color";
 @use "sass:map";
-%ham-sidebar {
-  position: absolute;
-  inset-block: 0;
-  inset-inline: 0;
-
-  max-width: 250px;
-  min-height: 100vh;
-  background-color: green;
-
-  z-index: -1;
-  transition:
-    transform 1000ms ease-in,
-    opacity 500ms linear;
-  &.show {
-    opacity: 1;
-    transform: translateX(0%);
-    z-index: 999;
-  }
-  &.close {
-    opacity: 0;
-    transform: translateX(100%);
-    z-index: -1;
-  }
-}
 
 %backdrop {
   position: fixed;

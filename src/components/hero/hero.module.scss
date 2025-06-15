@@ -38,10 +38,7 @@
   .img-container {
     direction: rtl;
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: "stack";
-    position: relative; // for z-index stacking context
+
     width: 100%;
   }
 
@@ -109,16 +106,11 @@
     }
   }
   .mobile-texts {
-    grid-area: stack;
-    align-self: end;
-
     display: grid;
     row-gap: 0.5rem;
     color: var(--text-light);
 
     text-align: center;
-
-    z-index: 3;
 
     margin-block-end: 1rem;
 

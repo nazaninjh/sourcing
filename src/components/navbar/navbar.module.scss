@@ -1,5 +1,5 @@
 @use "./../../app//styles/mixins" as mixin;
-@use "./../../app//styles/placeholders";
+
 .nav {
   display: none;
   @include mixin.mq(sm) {
@@ -56,35 +56,16 @@
 .mobile-nav {
   position: relative;
   display: grid;
+  align-self: center;
   grid-template-columns: repeat(3, auto);
   align-items: center;
   justify-content: space-between;
 
   padding-block: 1rem;
 
+  overflow-x: hidden;
+
   @include mixin.mq(sm) {
     display: none;
-  }
-
-  .menuBtn {
-    z-index: 10;
-    outline: none;
-    border: none;
-    background-color: transparent;
-  }
-
-  .overlay {
-    opacity: 0;
-    z-index: 0;
-    height: auto;
-    width: auto;
-    @include mixin.mq(sm) {
-      min-width: 100vw;
-      min-height: 100vh;
-      min-height: 100dvh;
-    }
-    .sidebar {
-      @extend %ham-sidebar;
-    }
   }
 }

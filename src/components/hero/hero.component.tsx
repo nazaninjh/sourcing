@@ -7,9 +7,9 @@ import clsx from "clsx";
 import GridImageComponent from "../shared/grid-image/gridImage.component";
 import { Carousel } from "antd";
 import { mapImages } from "@/assets/images/mentor/mapImages";
-import styles from "./hero.module.scss";
 import overlay from "@/assets/images/hero/hero-overlay.webp";
 import HeroMobileComponent from "./heroMobile.component";
+import styles from "./hero.module.scss";
 
 export default function HeroComponent() {
   return (
@@ -55,15 +55,6 @@ export default function HeroComponent() {
                             {texts.btns.competitions}
                           </button>
                         </div>
-                      </div>
-                    ),
-                  },
-                  bottomChildren: {
-                    direction: "center",
-                    child: (
-                      <div className={clsx(styles["mobile-texts"])}>
-                        <h1>{texts.texts.title}</h1>
-                        <h4>{texts.texts.subTitle}</h4>
                       </div>
                     ),
                   },

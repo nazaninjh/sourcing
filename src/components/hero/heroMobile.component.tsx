@@ -34,21 +34,7 @@ export default function HeroMobileComponent() {
             </div>
           ),
         },
-        centerChildren: {
-          direction: "center",
-          width: "100%",
-          child: (
-            <div className={clsx(styles.texts)}>
-              <h1>{texts.texts.title}</h1>
-              <h4>{texts.texts.subTitle}</h4>
-              <h5>{texts.texts.content}</h5>
-              <div className={styles.btns}>
-                <button type="button">{texts.btns.archive}</button>
-                <button type="button">{texts.btns.competitions}</button>
-              </div>
-            </div>
-          ),
-        },
+
         bottomChildren: {
           direction: "center",
           child: (

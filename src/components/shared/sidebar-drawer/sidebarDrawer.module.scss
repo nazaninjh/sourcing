@@ -1,0 +1,105 @@
+@use "./../../../app/styles/mixins" as mixin;
+
+.wrapper {
+  .menuBtn {
+    padding: 0;
+    outline: none;
+    border: none;
+    background-color: transparent;
+
+    cursor: pointer;
+
+    max-width: 100%;
+  }
+
+  .overlay {
+    position: fixed;
+    opacity: 0;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+
+    z-index: 0;
+
+    transform: translateX(-100%);
+
+    &.show {
+      opacity: 0.5;
+      z-index: 999;
+
+      height: 100vh;
+      width: 100vw;
+
+      -webkit-backdrop-filter: blur(3px);
+      backdrop-filter: blur(3px);
+      background-color: rgba(0, 0, 0, 0.1);
+
+      transform: translateX(0%);
+    }
+
+    transform: translateX(100%);
+    @include mixin.mq(sm) {
+      min-width: 100vw;
+      min-height: 100vh;
+      min-height: 100dvh;
+    }
+  }
+
+  .sidebar {
+    display: grid;
+    grid-template-areas: "close close" "items items";
+    grid-template-rows: auto 1fr;
+    row-gap: 0;
+    position: fixed;
+    opacity: 0;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    width: 80%;
+    max-width: 300px;
+    min-height: 100vh;
+    background-color: white;
+
+    z-index: 998;
+    transform: translateX(-100%);
+    transition:
+      transform 800ms ease-in,
+      opacity 500ms linear;
+    &.show {
+      opacity: 1;
+      transform: translateX(0%);
+      z-index: 999;
+    }
+    &.close {
+      opacity: 0;
+      transform: translateX(100%);
+      z-index: 1;
+    }
+    .closeBtn {
+      grid-area: close;
+      justify-self: end;
+      width: fit-content;
+
+      background-color: transparent;
+
+      padding: 0.5rem;
+
+      border: none;
+      outline: none;
+      cursor: pointer;
+    }
+
+    > ul {
+      grid-area: items;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 1rem;
+
+      > li {
+        &:hover {
+          color: var(--color-primary);
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
