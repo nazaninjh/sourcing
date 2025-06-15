@@ -14,7 +14,7 @@ export default function SidebarDrawerComponent(props: IProps) {
   const sidebarRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const close = (e: TouchEvent) => {
+    const close = (e: PointerEvent) => {
       if (
         sidebarRef.current &&
         !sidebarRef.current?.contains(e.target as Node)
@@ -22,8 +22,8 @@ export default function SidebarDrawerComponent(props: IProps) {
         sidebarRef.current.classList.add("close");
       }
     };
-    document.addEventListener("touchstart", close);
-    return () => document.removeEventListener("touchstart", close);
+    document.addEventListener("pointerdown", close);
+    return () => document.removeEventListener("pointerdown", close);
   }, []);
 
   // Lock body scroll
@@ -47,7 +47,7 @@ export default function SidebarDrawerComponent(props: IProps) {
       <button
         type="button"
         className={styles.menuBtn}
-        onTouchStart={() => setOpenSidebar((prev) => !prev)}
+        onPointerDown={() => setOpenSidebar((prev) => !prev)}
         aria-label="Toggle menu"
       >
         {props.hamburgerIcon}
@@ -58,7 +58,7 @@ export default function SidebarDrawerComponent(props: IProps) {
           styles.overlay,
           openSidebar ? styles.show : styles.close
         )}
-        onTouchStart={handleClose}
+        onPointerDown={handleClose}
       />
 
       <aside
@@ -71,7 +71,7 @@ export default function SidebarDrawerComponent(props: IProps) {
         {props.hasCloseIcon && (
           <button
             type="button"
-            onTouchStart={handleClose}
+            onPointerDown={handleClose}
             className={styles.closeBtn}
           >
             {props.closeIcon}
