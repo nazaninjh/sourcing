@@ -3,9 +3,9 @@ import GridImageComponent from "@/components/shared/grid-image/gridImage.compone
 
 import texts from "./assets/texts/archived.json";
 
-import styles from "./archived.module.scss";
 import PolygonIcon from "./assets/icons/polygon.icon";
 import { mapImages } from "@/assets/images/mentor/mapImages";
+import styles from "./archived.module.scss";
 
 export default function ArchivedComponent() {
   return (
@@ -32,7 +32,12 @@ export default function ArchivedComponent() {
                     direction: "start",
                     child: (
                       <div className={styles["top-texts"]}>
-                        <PolygonIcon />
+                        <div className={styles["mobile-polygon"]}>
+                          <PolygonIcon width="3.7rem" height="3.3rem" />
+                        </div>
+                        <div className={styles["desktop-polygon"]}>
+                          <PolygonIcon width="5rem" height="4.5rem" />
+                        </div>
 
                         <div className={styles.texts}>
                           <p className={styles.percent}>

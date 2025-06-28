@@ -2,8 +2,8 @@ import Image from "next/image";
 import texts from "./assets/texts/tools.json";
 import crane from "./assets/images/crane-pic.webp";
 import rectangle from "./assets/images/crane-rectangle.webp";
-import styles from "./tools.module.scss";
 import clsx from "clsx";
+import styles from "./tools.module.scss";
 
 export default function ToolsComponent() {
   return (

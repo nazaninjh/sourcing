@@ -5,9 +5,10 @@ import { useState } from "react";
 import img from "./assets/images/video-placeholder.webp";
 import texts from "./assets/texts/information.json";
 
+import ArrowIcon from "./assets/icons/arrow.icon";
+
 import clsx from "clsx";
 import styles from "./information.module.scss";
-import ArrowIcon from "./assets/icons/arrow.icon";
 export default function InformationComponent() {
   const [activeState, setactiveState] = useState<
     "sin-designer" | "suleMarket" | "suleSazan"

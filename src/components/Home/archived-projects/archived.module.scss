@@ -27,15 +27,31 @@
         height: fns.px_to_rem(350);
       }
       @include mixin.mq(xl) {
-        width: fns.px_to_rem(450);
-        height: fns.px_to_rem(500);
+        width: fns.px_to_rem(350);
+        height: fns.px_to_rem(400);
       }
     }
 
-    // todo: fix clip path
-
     .top-texts {
       @extend %grid-stack;
+
+      .mobile-polygon {
+        grid-area: stack;
+
+        @include mixin.mq(sm) {
+          display: none;
+        }
+      }
+
+      .desktop-polygon {
+        display: none;
+        grid-area: stack;
+
+        @include mixin.mq(sm) {
+          display: inline;
+        }
+      }
+
       .texts {
         grid-area: stack;
         z-index: 2;
@@ -43,9 +59,12 @@
         > p {
           margin: 0;
           padding-inline-start: 0.2rem;
-          font-size: var(--fz-xs);
+          font-size: 0.5rem;
 
           text-align: start;
+          @include mixin.mq(sm) {
+            font-size: var(--fz-xs);
+          }
         }
 
         .percent {

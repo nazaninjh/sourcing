@@ -13,8 +13,8 @@ export default function IntroComponent() {
               <Image
                 src={mapImages("intro", text.img)}
                 alt=""
-                width={100}
-                height={100}
+                width={70}
+                height={70}
               />
               <span> {text.title}</span>
             </div>

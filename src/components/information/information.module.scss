@@ -5,7 +5,6 @@
   &.active {
     height: auto;
     transform: translateX(0%);
-    transform: translateY(2%);
 
     opacity: 1;
     visibility: visible;
@@ -109,6 +108,11 @@
 .breadcrumb {
   display: flex;
   align-items: center;
+  justify-content: center;
+
+  @include mixin.mq(lg) {
+    justify-content: start;
+  }
 
   > .bread-btn {
     display: flex;

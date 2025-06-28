@@ -5,7 +5,7 @@ import LogoComponent from "../shared/logo-beigi/logo.component";
 import vars from "@/app/styles/variables.module.scss";
 import useContent from "./assets/texts/useContent";
 import footerImg from "./assets/images/footer-img.webp";
-import scrollToTop from "@/functions/scrollToTop";
+import scrollToPosition from "@/functions/scrollToPosition";
 
 import texts from "./assets/texts/footer.json";
 import GoUOIcon from "./assets/icons/goUp.icon";
@@ -70,7 +70,7 @@ export default function FooterComponent() {
         <div className={styles["sub-footer"]}>
           <button
             type="button"
-            onClick={() => scrollToTop()}
+            onClick={() => scrollToPosition("top")}
             className={styles.btn}
           >
             <span>
