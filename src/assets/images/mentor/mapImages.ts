@@ -78,7 +78,7 @@ type ImageKey<List extends ImageListKey> = keyof (typeof imageLists)[List];
 
 export const mapImages = (
   listKey: ImageListKey,
-  imageKey: ImageKey<ImageListKey>,
+  imageKey: ImageKey<ImageListKey>
 ): StaticImageData => {
   const imageList = imageLists[listKey];
 

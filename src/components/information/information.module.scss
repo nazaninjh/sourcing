@@ -108,29 +108,40 @@
 .breadcrumb {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 
+  height: fit-content;
+
+  color: var(--text-dark);
   @include mixin.mq(lg) {
     justify-content: start;
-  }
 
-  > .bread-btn {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+    > button {
+      font-size: var(--fz-md);
+    }
+  }
+  .container {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 0.5rem;
     width: fit-content;
 
-    font-size: var(--fz-sm);
-    color: var(--text-dark);
+    margin: unset;
 
-    cursor: pointer;
+    > button {
+      width: fit-content;
+      font-size: var(--fz-sm);
+    }
+    .bread-btn {
+      cursor: pointer;
 
-    &.active {
-      > p {
-        color: var(--color-secondary);
-        text-decoration: underline;
-        text-underline-offset: 0.5rem;
-        text-decoration-color: var(--color-secondary);
+      &.active {
+        > p {
+          color: var(--color-secondary);
+          text-decoration: underline;
+          text-underline-offset: 0.5rem;
+          text-decoration-color: var(--color-secondary);
+        }
       }
     }
   }

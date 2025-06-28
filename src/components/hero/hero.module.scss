@@ -113,18 +113,16 @@
 
     text-align: center;
 
-    margin-block-end: 1rem;
-
     > * {
       margin: 0;
     }
 
     > h1 {
-      font-size: var(--fz-lg);
+      font-size: var(--fz-md);
     }
 
     > h4 {
-      font-size: var(--fz-md);
+      font-size: var(--fz-sm);
     }
 
     @include mixin.mq(sm) {

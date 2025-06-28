@@ -1,8 +1,8 @@
 import Image from "next/image";
-import styles from "./onGoingCard.module.scss";
 import { ReactNode } from "react";
 import GridImageComponent from "@/components/shared/grid-image/gridImage.component";
 import { StaticImageData } from "next/image";
+import styles from "./onGoingCard.module.scss";
 
 export default function OnGoingCardComponent({
   imgSrc,

@@ -4,7 +4,6 @@ import { mapImages } from "@/assets/images/mentor/mapImages";
 import texts from "./assets/texts/news.json";
 
 import styles from "./news.module.scss";
-import PlayIcon from "./assets/icons/play.icon";
 export default function NewsComponent() {
   return (
     <section className="wrapper">
@@ -27,20 +26,16 @@ export default function NewsComponent() {
             })}
           </div>
 
-          <div className={styles.videos}>
-            {texts.videos.map((video) => {
-              return (
-                <div key={video.img + video.title} className={styles.video}>
-                  <Image alt="" src={mapImages("news", video.img)} fill />
-                  <div className={styles.overlay} />
-                  <span className={styles.icon}>
-                    <PlayIcon />
-                  </span>
-                  <span className={styles["video-title"]}>{video.title}</span>
-                </div>
-              );
-            })}
-          </div>
+          {texts.videos.map((video) => {
+            return (
+              <div key={video.src + video.title}>
+                <video className={styles.videoPlayer} controls>
+                  <source src="/videos/laptop-video.webm" type="video/webm" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

@@ -89,59 +89,17 @@
     }
   }
 
-  .videos {
+  .videoPlayer {
+    display: block;
     width: 100%;
     height: 100%;
-    .video {
-      @extend %grid-stack;
+
+    object-fit: cover;
+    border-radius: 0.5rem;
+
+    > video {
       width: 100%;
-
-      height: fns.px_to_rem(300);
-      position: relative;
-
-      @include mixin.mq(lg) {
-        height: 100%;
-      }
-
-      .video-img {
-        grid-area: stack;
-
-        z-index: 1;
-
-        object-fit: cover;
-
-        border-radius: 0.5rem;
-
-        width: 100%;
-        height: auto;
-      }
-      .icon {
-        grid-area: stack;
-        z-index: 2;
-        align-self: center;
-        justify-self: center;
-      }
-      .video-title {
-        grid-area: stack;
-        z-index: 2;
-        align-self: end;
-        justify-self: start;
-
-        color: var(--text-light);
-        text-shadow: 1px 1px 5px gray;
-        font-size: var(--fz-lg);
-        font-weight: 500;
-        padding: 0.5rem;
-      }
-
-      .overlay {
-        position: absolute;
-        z-index: 2;
-        inset: 0;
-
-        border-radius: 0.5rem;
-        @extend %overlay;
-      }
+      height: 100%;
     }
   }
 }

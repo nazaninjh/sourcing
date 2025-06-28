@@ -5,7 +5,6 @@ export default function LogoComponent({
 }: {
   customStyles: CSSProperties;
 }) {
-  // todo: add font size in here
   return (
     <div className={styles.logo} style={customStyles}>
       BEIGI

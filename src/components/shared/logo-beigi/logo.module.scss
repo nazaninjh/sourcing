@@ -1,8 +1,8 @@
 @use "./../../../app/styles/mixins" as mixin;
 .logo {
   font-size: var(--fz-heading-md);
+  font-family: var(--rozha-fa);
   @include mixin.mq(sm) {
     font-size: var(--fz-heading-lg);
-    font-family: var(--rozha-fa);
   }
 }

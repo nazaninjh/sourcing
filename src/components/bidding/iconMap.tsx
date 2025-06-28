@@ -6,6 +6,6 @@ export const iconMap: {
   participant: ReactNode;
   price: ReactNode;
 } = {
-  participant: <ParticipantIcon width={16} height={16} />,
-  price: <PriceIcon width={16} height={16} />,
+  participant: <ParticipantIcon width={20} height={20} />,
+  price: <PriceIcon width={20} height={20} />,
 };

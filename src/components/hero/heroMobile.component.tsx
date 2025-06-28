@@ -10,8 +10,8 @@ import GridImageComponent from "../shared/grid-image/gridImage.component";
 import { mapImages } from "@/assets/images/mentor/mapImages";
 import overlay from "@/assets/images/hero/hero-overlay.webp";
 import ScrollIcon from "./assets/icons/scrollToBottom.icon";
-import styles from "./hero.module.scss";
 import scrollToPosition from "@/functions/scrollToPosition";
+import styles from "./hero.module.scss";
 
 export default function HeroMobileComponent() {
   return (

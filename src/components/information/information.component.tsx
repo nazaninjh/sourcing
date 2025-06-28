@@ -14,7 +14,6 @@ export default function InformationComponent() {
     "sin-designer" | "suleMarket" | "suleSazan"
   >("sin-designer");
 
-  // todo: seperate breadcrumb
   return (
     <div className="wrapper">
       <div className={styles.container}>
@@ -26,28 +25,45 @@ export default function InformationComponent() {
           <div className={styles.breadcrumb}>
             {texts.breadcrumb.map((crumb, index) => {
               return (
-                <button
-                  key={crumb.code}
-                  type="button"
-                  className={clsx(
-                    styles["bread-btn"],
-                    crumb.code === activeState && styles.active
-                  )}
-                  onClick={() => {
-                    setactiveState(
-                      crumb.code as "sin-designer" | "suleMarket" | "suleSazan"
-                    );
-                  }}
-                >
-                  <p>{crumb.title}</p>
-                  <span>
-                    {index >= texts.breadcrumb.length - 1 ? (
-                      ""
-                    ) : (
-                      <ArrowIcon width={16} height={16} />
+                <div key={crumb.code} className={styles.container}>
+                  <button
+                    type="button"
+                    className={clsx(
+                      styles["bread-btn"],
+                      crumb.code === activeState && styles.active
                     )}
-                  </span>
-                </button>
+                    onClick={() => {
+                      setactiveState(
+                        crumb.code as
+                          | "sin-designer"
+                          | "suleMarket"
+                          | "suleSazan"
+                      );
+                    }}
+                  >
+                    <p>{crumb.title}</p>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setactiveState(
+                        crumb.code as
+                          | "sin-designer"
+                          | "suleMarket"
+                          | "suleSazan"
+                      );
+                    }}
+                  >
+                    {" "}
+                    <span>
+                      {index >= texts.breadcrumb.length - 1 ? (
+                        ""
+                      ) : (
+                        <ArrowIcon width={16} height={16} />
+                      )}
+                    </span>
+                  </button>
+                </div>
               );
             })}
           </div>

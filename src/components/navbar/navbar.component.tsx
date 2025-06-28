@@ -3,12 +3,12 @@ import vars from "@/app/styles/variables.module.scss";
 
 import text from "./assets/texts/navbar.json";
 
-import clsx from "clsx";
-import styles from "./navbar.module.scss";
-
 import NavbarMobileComponent from "./navbarMobile.component";
 import { SearchIcon } from "./assets/icons/search.icon";
 import ExitIcon from "./assets/icons/exit.icon";
+
+import clsx from "clsx";
+import styles from "./navbar.module.scss";
 export default function NavbarComponent() {
   return (
     <div className="wrapper">
@@ -37,7 +37,8 @@ export default function NavbarComponent() {
               <ExitIcon width={16} height={14} />
             </span>
             <span>
-              {text.signup.enter} | {text.signup.signup}
+              <span>{text.signup.enter}</span> <span>|</span>{" "}
+              <span> {text.signup.signup}</span>
             </span>
           </button>
         </div>
